@@ -1,0 +1,4019 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[    155219,       4011]
+NotebookOptionsPosition[    152214,       3953]
+NotebookOutlinePosition[    152734,       3972]
+CellTagsIndexPosition[    152691,       3969]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{"Clear", "[", 
+  RowBox[{
+  "a", ",", "b", ",", "c", ",", "d", ",", "e", ",", "f", ",", "m", ",", "x", 
+   ",", "\[Mu]", ",", "\[Sigma]", ",", "t", ",", "W"}], "]"}]], "Input",
+ CellChangeTimes->{{3.8555561368372774`*^9, 3.8555561447120075`*^9}, {
+  3.8555564605765705`*^9, 3.855556462123417*^9}},
+ CellLabel->"In[96]:=",ExpressionUUID->"e26587ab-68ca-4a31-a08e-0d3399255bd4"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"DSolve", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"a", " ", 
+      RowBox[{"D", "[", 
+       RowBox[{
+        RowBox[{"W", "[", "t", "]"}], ",", "t"}], "]"}]}], "+", 
+     RowBox[{"b", " ", 
+      RowBox[{"W", "[", "t", "]"}]}], "+", 
+     RowBox[{"c", " ", "t"}], " ", "+", "d", "+", 
+     RowBox[{"e", 
+      RowBox[{"(", 
+       FractionBox[
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{"-", 
+          FractionBox[
+           SuperscriptBox[
+            RowBox[{"(", 
+             RowBox[{"x", "-", "\[Mu]"}], ")"}], "2"], 
+           RowBox[{"2", " ", 
+            SuperscriptBox["\[Sigma]", "2"]}]]}]], 
+        RowBox[{
+         SqrtBox[
+          RowBox[{"2", " ", "\[Pi]"}]], " ", "\[Sigma]"}]], ")"}]}]}], 
+    "\[Equal]", "0"}], ",", 
+   RowBox[{"W", "[", "t", "]"}], ",", "t"}], "]"}]], "Input",
+ CellChangeTimes->{{3.8554682088925886`*^9, 3.8554682163298645`*^9}, {
+  3.855468259750333*^9, 3.8554683087955894`*^9}, {3.8554683744574003`*^9, 
+  3.8554684093781404`*^9}, {3.855468690430809*^9, 3.8554686906964226`*^9}, {
+  3.8554689759460726`*^9, 3.8554689878572617`*^9}, {3.8554696350720673`*^9, 
+  3.8554696464346337`*^9}, {3.8554897820362005`*^9, 3.8554897821746373`*^9}, {
+  3.855555900804125*^9, 3.8555559009916134`*^9}, {3.8555560791516743`*^9, 
+  3.8555561115099735`*^9}, {3.8555564655451508`*^9, 3.8555564664045043`*^9}, {
+  3.856300546864992*^9, 3.856300595220583*^9}},
+ CellLabel->"In[97]:=",ExpressionUUID->"0a35ddd7-675b-4aa3-b755-52b4cb9a7bac"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"W", "[", "t", "]"}], "\[Rule]", 
+    RowBox[{
+     FractionBox[
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "b"}], " ", "e", " ", 
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{"-", 
+          FractionBox[
+           SuperscriptBox[
+            RowBox[{"(", 
+             RowBox[{"x", "-", "\[Mu]"}], ")"}], "2"], 
+           RowBox[{"2", " ", 
+            SuperscriptBox["\[Sigma]", "2"]}]]}]], " ", 
+        SqrtBox[
+         FractionBox["2", "\[Pi]"]]}], "+", 
+       RowBox[{"2", " ", "a", " ", "c", " ", "\[Sigma]"}], "-", 
+       RowBox[{"2", " ", "b", " ", 
+        RowBox[{"(", 
+         RowBox[{"d", "+", 
+          RowBox[{"c", " ", "t"}]}], ")"}], " ", "\[Sigma]"}]}], 
+      RowBox[{"2", " ", 
+       SuperscriptBox["b", "2"], " ", "\[Sigma]"}]], "+", 
+     RowBox[{
+      SuperscriptBox["\[ExponentialE]", 
+       RowBox[{"-", 
+        FractionBox[
+         RowBox[{"b", " ", "t"}], "a"]}]], " ", 
+      TemplateBox[{"1"},
+       "C"]}]}]}], "}"}], "}"}]], "Output",
+ CellChangeTimes->{{3.8564351005247474`*^9, 3.8564351062276754`*^9}, 
+   3.85643818729955*^9},
+ CellLabel->"Out[97]=",ExpressionUUID->"cb21fcf5-fe09-4e42-8f8f-55898a1fc104"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Clear", "[", 
+  RowBox[{
+  "a", ",", "b", ",", "c", ",", "d", ",", "e", ",", "f", ",", "m", ",", "x", 
+   ",", "\[Mu]", ",", "\[Sigma]", ",", "t", ",", "W"}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"sols", "=", 
+   RowBox[{"FindInstance", "[", 
+    RowBox[{
+     RowBox[{"W", "\[Equal]", 
+      RowBox[{
+       FractionBox[
+        RowBox[{
+         RowBox[{
+          RowBox[{"-", "b"}], " ", "e", " ", 
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"-", 
+            FractionBox[
+             SuperscriptBox[
+              RowBox[{"(", 
+               RowBox[{"x", "-", "\[Mu]"}], ")"}], "2"], 
+             RowBox[{"2", " ", 
+              SuperscriptBox["\[Sigma]", "2"]}]]}]], " ", 
+          SqrtBox[
+           FractionBox["2", "\[Pi]"]]}], "+", 
+         RowBox[{"2", " ", "a", " ", "c", " ", "\[Sigma]"}], "-", 
+         RowBox[{"2", " ", "b", " ", 
+          RowBox[{"(", 
+           RowBox[{"d", "+", 
+            RowBox[{"c", " ", "t"}]}], ")"}], " ", "\[Sigma]"}]}], 
+        RowBox[{"2", " ", 
+         SuperscriptBox["b", "2"], " ", "\[Sigma]"}]], "+", 
+       RowBox[{
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{"-", 
+          FractionBox[
+           RowBox[{"b", " ", "t"}], "a"]}]], " ", "f"}]}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+      "a", ",", "b", ",", "c", ",", "d", ",", "e", ",", "f", ",", "\[Mu]", 
+       ",", "\[Sigma]", ",", "x", ",", "t", ",", "W"}], "}"}], ",", "Reals", 
+     ",", "729"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"sols", "=", 
+   RowBox[{"Union", "[", "sols", "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Length", "[", "sols", 
+  "]"}], "\[IndentingNewLine]", "sols"}], "Input",
+ CellChangeTimes->{{3.8564356955661216`*^9, 3.856435780781926*^9}, {
+   3.8564359606194787`*^9, 3.856435961853793*^9}, {3.8564362409075346`*^9, 
+   3.8564362542977033`*^9}, {3.856436331295037*^9, 3.8564363319512653`*^9}, {
+   3.856436421823164*^9, 3.856436424963681*^9}, {3.8564365870205793`*^9, 
+   3.8564365927235036`*^9}, {3.856436933977361*^9, 3.8564369437113733`*^9}, {
+   3.85643699838136*^9, 3.856437001428129*^9}, {3.856437368743566*^9, 
+   3.856437384008664*^9}, {3.8564374371318293`*^9, 3.856437437647456*^9}, {
+   3.85643760242299*^9, 3.8564376325000725`*^9}, {3.8564382752965097`*^9, 
+   3.8564382965926504`*^9}, {3.856438530116296*^9, 3.8564385307725077`*^9}, {
+   3.8564397100830207`*^9, 3.856439710614255*^9}, 3.85643990560752*^9, {
+   3.8564400082758403`*^9, 3.856440009213333*^9}, {3.8564433828428354`*^9, 
+   3.8564433834834404`*^9}, {3.887541657514445*^9, 3.887541668498021*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"8ace16f0-55e4-4c1a-9b13-b8642b8b1847"],
+
+Cell[BoxData["729"], "Output",
+ CellChangeTimes->{
+  3.8564400105257645`*^9, 3.856441129506137*^9, {3.8564433568281097`*^9, 
+   3.8564433864833336`*^9}, 3.8564434799606237`*^9, 3.8875416778048506`*^9},
+ CellLabel->"Out[4]=",ExpressionUUID->"cf8c08e9-39e2-40fd-acdd-353a01e30086"],
+
+Cell[BoxData[
+ InterpretationBox[
+  TagBox[
+   FrameBox[GridBox[{
+      {
+       ItemBox[
+        TagBox[
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"a", "\[Rule]", 
+              RowBox[{"-", 
+               FractionBox["36319", "10"]}]}], ",", 
+             RowBox[{"b", "\[Rule]", 
+              FractionBox["14741", "5"]}], ",", 
+             RowBox[{"c", "\[Rule]", 
+              RowBox[{"-", 
+               FractionBox["22769", "10"]}]}], ",", 
+             RowBox[{"d", "\[Rule]", 
+              FractionBox["33527", "10"]}], ",", 
+             RowBox[{"e", "\[Rule]", 
+              RowBox[{"-", 
+               FractionBox["26723", "10"]}]}], ",", 
+             RowBox[{"f", "\[Rule]", 
+              FractionBox["7021", "5"]}], ",", 
+             RowBox[{"\[Mu]", "\[Rule]", "3502"}], ",", 
+             RowBox[{"\[Sigma]", "\[Rule]", 
+              FractionBox["9712", "5"]}], ",", 
+             RowBox[{"x", "\[Rule]", 
+              FractionBox["633", "10"]}], ",", 
+             RowBox[{"t", "\[Rule]", 
+              RowBox[{"-", 
+               FractionBox["16963", "10"]}]}], ",", 
+             RowBox[{"W", "\[Rule]", 
+              RowBox[{
+               FractionBox["7021", 
+                RowBox[{"5", " ", 
+                 SuperscriptBox["\[ExponentialE]", 
+                  RowBox[{"250051583", "/", "181595"}]]}]], "+", 
+               FractionBox[
+                RowBox[{"125", " ", 
+                 RowBox[{"(", 
+                  RowBox[{
+                   RowBox[{"-", 
+                    FractionBox["27651190455264752", "625"]}], "+", 
+                   FractionBox["393923743", 
+                    RowBox[{"25", " ", 
+                    SuperscriptBox["\[ExponentialE]", 
+                    TemplateBox[{"1"},
+                    "OutputSizeLimit`Skeleton"]], " ", 
+                    SqrtBox[
+                    RowBox[{"2", " ", "\[Pi]"}]]}]]}], ")"}]}], 
+                "4220778501344"]}]}]}], "}"}], ",", 
+           TemplateBox[{"727"},
+            "OutputSizeLimit`Skeleton"], ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"a", "\[Rule]", 
+              FractionBox["36433", "10"]}], ",", 
+             RowBox[{"b", "\[Rule]", 
+              FractionBox["8953", "10"]}], ",", 
+             RowBox[{"c", "\[Rule]", 
+              FractionBox["27843", "10"]}], ",", 
+             TemplateBox[{"5"},
+              "OutputSizeLimit`Skeleton"], ",", 
+             RowBox[{"x", "\[Rule]", 
+              RowBox[{"-", 
+               FractionBox[
+                TemplateBox[{"5"},
+                 "OutputSizeLimit`Skeleton"], "10"]}]}], ",", 
+             RowBox[{"t", "\[Rule]", 
+              RowBox[{"-", 
+               FractionBox["28119", "10"]}]}], ",", 
+             RowBox[{"W", "\[Rule]", 
+              FractionBox[
+               RowBox[{
+                RowBox[{"8938921590986593", " ", 
+                 SuperscriptBox["\[ExponentialE]", 
+                  TemplateBox[{"1"},
+                   "OutputSizeLimit`Skeleton"]]}], "+", 
+                TemplateBox[{"1"},
+                 "OutputSizeLimit`Skeleton"], "-", 
+                RowBox[{"207134050", " ", 
+                 TemplateBox[{"1"},
+                  "OutputSizeLimit`Skeleton"]}]}], 
+               RowBox[{"1020388540570", " ", 
+                SuperscriptBox["\[ExponentialE]", 
+                 TemplateBox[{"1"},
+                  "OutputSizeLimit`Skeleton"]]}]]}]}], "}"}]}], "}"}],
+         Short[#, 5]& ],
+        BaseStyle->{Deployed -> False},
+        StripOnInput->False]},
+      {GridBox[{
+         {
+          PaneBox[
+           TagBox[
+            TooltipBox[
+             StyleBox[
+              StyleBox[
+               DynamicBox[ToBoxes[
+                 FEPrivate`FrontEndResource[
+                 "FEStrings", "sizeBriefExplanation"], StandardForm],
+                ImageSizeCache->{95., {4., 13.}}],
+               StripOnInput->False,
+               DynamicUpdating->True,
+               LineSpacing->{1, 2},
+               LineIndent->0,
+               LinebreakAdjustments->{1., 100, 0, 0, 0}], "OSLText",
+              StripOnInput->False],
+             StyleBox[
+              DynamicBox[
+               ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeExplanation"], 
+                StandardForm]], DynamicUpdating -> True, LineIndent -> 0, 
+              LinebreakAdjustments -> {1., 100, 0, 0, 0}, 
+              LineSpacing -> {1, 2}, StripOnInput -> False]],
+            Annotation[#, 
+             Style[
+              Dynamic[
+               FEPrivate`FrontEndResource["FEStrings", "sizeExplanation"]], 
+              DynamicUpdating -> True, LineIndent -> 0, 
+              LinebreakAdjustments -> {1., 100, 0, 0, 0}, 
+              LineSpacing -> {1, 2}], "Tooltip"]& ],
+           Alignment->Center,
+           BaselinePosition->Baseline,
+           ImageSize->{Automatic, {25, Full}}], 
+          ButtonBox[
+           PaneSelectorBox[{False->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeShowLess"], 
+                StandardForm],
+               ImageSizeCache->{74., {1., 13.}}],
+              StripOnInput->False,
+              DynamicUpdating->True,
+              LineSpacing->{1, 2},
+              LineIndent->0,
+              LinebreakAdjustments->{1., 100, 0, 0, 0}], "OSLControl",
+             StripOnInput->False], True->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeShowLess"], 
+                StandardForm]],
+              StripOnInput->False,
+              DynamicUpdating->True,
+              LineSpacing->{1, 2},
+              LineIndent->0,
+              LinebreakAdjustments->{1., 100, 0, 0, 0}], "OSLControlActive",
+             StripOnInput->False]}, Dynamic[
+             CurrentValue["MouseOver"]],
+            Alignment->Center,
+            FrameMargins->0,
+            ImageSize->{Automatic, {25, Full}}],
+           Appearance->None,
+           BaselinePosition->Baseline,
+           
+           ButtonFunction:>OutputSizeLimit`ButtonFunction[
+            OutputSizeLimit`Defer, 5, 29310411174197590662, 5/2],
+           Enabled->True,
+           Evaluator->Automatic,
+           Method->"Queued"], 
+          ButtonBox[
+           PaneSelectorBox[{False->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeShowMore"], 
+                StandardForm],
+               ImageSizeCache->{88., {1., 13.}}],
+              StripOnInput->False,
+              DynamicUpdating->True,
+              LineSpacing->{1, 2},
+              LineIndent->0,
+              LinebreakAdjustments->{1., 100, 0, 0, 0}], "OSLControl",
+             StripOnInput->False], True->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeShowMore"], 
+                StandardForm]],
+              StripOnInput->False,
+              DynamicUpdating->True,
+              LineSpacing->{1, 2},
+              LineIndent->0,
+              LinebreakAdjustments->{1., 100, 0, 0, 0}], "OSLControlActive",
+             StripOnInput->False]}, Dynamic[
+             CurrentValue["MouseOver"]],
+            Alignment->Center,
+            FrameMargins->0,
+            ImageSize->{Automatic, {25, Full}}],
+           Appearance->None,
+           BaselinePosition->Baseline,
+           
+           ButtonFunction:>OutputSizeLimit`ButtonFunction[
+            OutputSizeLimit`Defer, 5, 29310411174197590662, 5 2],
+           Enabled->True,
+           Evaluator->Automatic,
+           Method->"Queued"], 
+          ButtonBox[
+           PaneSelectorBox[{False->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeShowAll"], 
+                StandardForm],
+               ImageSizeCache->{65., {1., 13.}}],
+              StripOnInput->False,
+              DynamicUpdating->True,
+              LineSpacing->{1, 2},
+              LineIndent->0,
+              LinebreakAdjustments->{1., 100, 0, 0, 0}], "OSLControl",
+             StripOnInput->False], True->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeShowAll"], 
+                StandardForm]],
+              StripOnInput->False,
+              DynamicUpdating->True,
+              LineSpacing->{1, 2},
+              LineIndent->0,
+              LinebreakAdjustments->{1., 100, 0, 0, 0}], "OSLControlActive",
+             StripOnInput->False]}, Dynamic[
+             CurrentValue["MouseOver"]],
+            Alignment->Center,
+            FrameMargins->0,
+            ImageSize->{Automatic, {25, Full}}],
+           Appearance->None,
+           BaselinePosition->Baseline,
+           
+           ButtonFunction:>OutputSizeLimit`ButtonFunction[
+            OutputSizeLimit`Defer, 5, 29310411174197590662, Infinity],
+           Enabled->True,
+           Evaluator->Automatic,
+           Method->"Queued"], 
+          ButtonBox[
+           PaneSelectorBox[{False->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeChangeLimit"], 
+                StandardForm],
+               ImageSizeCache->{115., {1., 13.}}],
+              StripOnInput->False,
+              DynamicUpdating->True,
+              LineSpacing->{1, 2},
+              LineIndent->0,
+              LinebreakAdjustments->{1., 100, 0, 0, 0}], "OSLControl",
+             StripOnInput->False], True->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeChangeLimit"], 
+                StandardForm]],
+              StripOnInput->False,
+              DynamicUpdating->True,
+              LineSpacing->{1, 2},
+              LineIndent->0,
+              LinebreakAdjustments->{1., 100, 0, 0, 0}], "OSLControlActive",
+             StripOnInput->False]}, Dynamic[
+             CurrentValue["MouseOver"]],
+            Alignment->Center,
+            FrameMargins->0,
+            ImageSize->{Automatic, {25, Full}}],
+           Appearance->None,
+           BaselinePosition->Baseline,
+           ButtonFunction:>FrontEndExecute[{
+              FrontEnd`SetOptions[
+              FrontEnd`$FrontEnd, 
+               FrontEnd`PreferencesSettings -> {"Page" -> "Advanced"}], 
+              FrontEnd`FrontEndToken["PreferencesDialog"]}],
+           Evaluator->None,
+           Method->"Preemptive"]}
+        },
+        AutoDelete->False,
+        FrameStyle->GrayLevel[0.85],
+        GridBoxDividers->{"Columns" -> {False, {True}}},
+        GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+        GridBoxSpacings->{"Columns" -> {{2}}}]}
+     },
+     DefaultBaseStyle->"Column",
+     GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+     GridBoxDividers->{"Columns" -> {{False}}, "Rows" -> {{False}}},
+     GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{1.}}},
+     GridBoxSpacings->{"Columns" -> {
+         Offset[0.27999999999999997`], {
+          Offset[0.5599999999999999]}, 
+         Offset[0.27999999999999997`]}, "Rows" -> {
+         Offset[0.2], 
+         Offset[1.2], {
+          Offset[0.4]}, 
+         Offset[0.2]}}],
+    BaseStyle->"OutputSizeLimit",
+    FrameMargins->{{12, 12}, {0, 15}},
+    FrameStyle->GrayLevel[0.85],
+    RoundingRadius->5,
+    StripOnInput->False],
+   Deploy,
+   DefaultBaseStyle->"Deploy"],
+  If[29310411174197590662 === $SessionID, 
+   Out[5], Message[
+     MessageName[Syntax, "noinfoker"]]; Missing["NotAvailable"]; 
+   Null]]], "Output",
+ CellChangeTimes->{
+  3.8564400105257645`*^9, 3.856441129506137*^9, {3.8564433568281097`*^9, 
+   3.8564433864833336`*^9}, 3.8564434799606237`*^9, 3.887541678005375*^9},
+ CellLabel->"Out[5]=",ExpressionUUID->"9de6fb5f-200e-4581-9b01-be57ac769da5"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Sort", "[", 
+  RowBox[{"sols", ",", " ", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"#1", "[", 
+      RowBox[{"[", 
+       RowBox[{
+        RowBox[{"-", "1"}], ",", 
+        RowBox[{"-", "1"}]}], "]"}], "]"}], ">", 
+     RowBox[{"#2", "[", 
+      RowBox[{"[", 
+       RowBox[{
+        RowBox[{"-", "1"}], ",", 
+        RowBox[{"-", "1"}]}], "]"}], "]"}]}], "&"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.8564421715776424`*^9, 3.8564422009594646`*^9}},
+ CellLabel->"In[5]:=",ExpressionUUID->"47348a84-205f-4300-a9e8-1ed7e4a64931"],
+
+Cell[BoxData[
+ InterpretationBox[
+  TagBox[
+   FrameBox[GridBox[{
+      {
+       ItemBox[
+        TagBox[
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"a", "\[Rule]", 
+              RowBox[{"-", 
+               FractionBox["43", "2"]}]}], ",", 
+             RowBox[{"b", "\[Rule]", 
+              FractionBox["4867", "2"]}], ",", 
+             RowBox[{"c", "\[Rule]", "1731"}], ",", 
+             RowBox[{"d", "\[Rule]", 
+              FractionBox["18273", "10"]}], ",", 
+             RowBox[{"e", "\[Rule]", 
+              FractionBox["7092", "5"]}], ",", 
+             RowBox[{"f", "\[Rule]", "2568"}], ",", 
+             RowBox[{"\[Mu]", "\[Rule]", 
+              RowBox[{"-", 
+               FractionBox["17904", "5"]}]}], ",", 
+             RowBox[{"\[Sigma]", "\[Rule]", 
+              RowBox[{"-", 
+               FractionBox["15553", "10"]}]}], ",", 
+             RowBox[{"x", "\[Rule]", 
+              RowBox[{"-", 
+               FractionBox["1734", "5"]}]}], ",", 
+             RowBox[{"t", "\[Rule]", 
+              FractionBox["2661", "2"]}], ",", 
+             RowBox[{"W", "\[Rule]", 
+              FractionBox[
+               RowBox[{"6", " ", 
+                RowBox[{"(", 
+                 RowBox[{
+                  RowBox[{
+                   RowBox[{"-", "290792722409053"}], " ", 
+                   SuperscriptBox["\[ExponentialE]", 
+                    RowBox[{"522937800", "/", "241895809"}]]}], "+", 
+                  RowBox[{"788407301816380", " ", 
+                   SuperscriptBox["\[ExponentialE]", 
+                    RowBox[{"3132858639945183", "/", 
+                    TemplateBox[{"11"},
+                    "OutputSizeLimit`Skeleton"]}]]}], "+", 
+                  RowBox[{"57527940", " ", 
+                   SqrtBox[
+                    FractionBox["2", "\[Pi]"]]}]}], ")"}]}], 
+               RowBox[{"1842073135085", " ", 
+                SuperscriptBox["\[ExponentialE]", 
+                 RowBox[{"522937800", "/", "241895809"}]]}]]}]}], "}"}], ",", 
+           TemplateBox[{"727"},
+            "OutputSizeLimit`Skeleton"], ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"a", "\[Rule]", 
+              RowBox[{"-", 
+               FractionBox["92", "5"]}]}], ",", 
+             RowBox[{"b", "\[Rule]", 
+              RowBox[{"-", 
+               FractionBox["32801", "10"]}]}], ",", 
+             RowBox[{"c", "\[Rule]", 
+              RowBox[{"-", 
+               FractionBox["10853", "10"]}]}], ",", 
+             TemplateBox[{"5"},
+              "OutputSizeLimit`Skeleton"], ",", 
+             RowBox[{"x", "\[Rule]", 
+              TemplateBox[{"1"},
+               "OutputSizeLimit`Skeleton"]}], ",", 
+             RowBox[{"t", "\[Rule]", 
+              RowBox[{"-", 
+               FractionBox["12699", "5"]}]}], ",", 
+             RowBox[{"W", "\[Rule]", 
+              FractionBox[
+               RowBox[{
+                RowBox[{"23055002875", " ", 
+                 SqrtBox["2"]}], "+", 
+                TemplateBox[{"1"},
+                 "OutputSizeLimit`Skeleton"], "-", 
+                TemplateBox[{"1"},
+                 "OutputSizeLimit`Skeleton"]}], 
+               RowBox[{"60024773479790", " ", 
+                SuperscriptBox["\[ExponentialE]", 
+                 TemplateBox[{"1"},
+                  "OutputSizeLimit`Skeleton"]], " ", 
+                SqrtBox["\[Pi]"]}]]}]}], "}"}]}], "}"}],
+         Short[#, 5]& ],
+        BaseStyle->{Deployed -> False},
+        StripOnInput->False]},
+      {GridBox[{
+         {
+          PaneBox[
+           TagBox[
+            TooltipBox[
+             StyleBox[
+              StyleBox[
+               DynamicBox[ToBoxes[
+                 FEPrivate`FrontEndResource[
+                 "FEStrings", "sizeBriefExplanation"], StandardForm],
+                ImageSizeCache->{95., {4., 13.}}],
+               StripOnInput->False,
+               DynamicUpdating->True,
+               LineSpacing->{1, 2},
+               LineIndent->0,
+               LinebreakAdjustments->{1., 100, 0, 0, 0}], "OSLText",
+              StripOnInput->False],
+             StyleBox[
+              DynamicBox[
+               ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeExplanation"], 
+                StandardForm]], DynamicUpdating -> True, LineIndent -> 0, 
+              LinebreakAdjustments -> {1., 100, 0, 0, 0}, 
+              LineSpacing -> {1, 2}, StripOnInput -> False]],
+            Annotation[#, 
+             Style[
+              Dynamic[
+               FEPrivate`FrontEndResource["FEStrings", "sizeExplanation"]], 
+              DynamicUpdating -> True, LineIndent -> 0, 
+              LinebreakAdjustments -> {1., 100, 0, 0, 0}, 
+              LineSpacing -> {1, 2}], "Tooltip"]& ],
+           Alignment->Center,
+           BaselinePosition->Baseline,
+           ImageSize->{Automatic, {25, Full}}], 
+          ButtonBox[
+           PaneSelectorBox[{False->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeShowLess"], 
+                StandardForm],
+               ImageSizeCache->{74., {1., 13.}}],
+              StripOnInput->False,
+              DynamicUpdating->True,
+              LineSpacing->{1, 2},
+              LineIndent->0,
+              LinebreakAdjustments->{1., 100, 0, 0, 0}], "OSLControl",
+             StripOnInput->False], True->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeShowLess"], 
+                StandardForm],
+               ImageSizeCache->{74., {1., 13.}}],
+              StripOnInput->False,
+              DynamicUpdating->True,
+              LineSpacing->{1, 2},
+              LineIndent->0,
+              LinebreakAdjustments->{1., 100, 0, 0, 0}], "OSLControlActive",
+             StripOnInput->False]}, Dynamic[
+             CurrentValue["MouseOver"]],
+            Alignment->Center,
+            FrameMargins->0,
+            ImageSize->{Automatic, {25, Full}}],
+           Appearance->None,
+           BaselinePosition->Baseline,
+           
+           ButtonFunction:>OutputSizeLimit`ButtonFunction[
+            OutputSizeLimit`Defer, 5, 29106606778433204850, 5/2],
+           Enabled->True,
+           Evaluator->Automatic,
+           Method->"Queued"], 
+          ButtonBox[
+           PaneSelectorBox[{False->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeShowMore"], 
+                StandardForm],
+               ImageSizeCache->{88., {1., 13.}}],
+              StripOnInput->False,
+              DynamicUpdating->True,
+              LineSpacing->{1, 2},
+              LineIndent->0,
+              LinebreakAdjustments->{1., 100, 0, 0, 0}], "OSLControl",
+             StripOnInput->False], True->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeShowMore"], 
+                StandardForm],
+               ImageSizeCache->{88., {1., 13.}}],
+              StripOnInput->False,
+              DynamicUpdating->True,
+              LineSpacing->{1, 2},
+              LineIndent->0,
+              LinebreakAdjustments->{1., 100, 0, 0, 0}], "OSLControlActive",
+             StripOnInput->False]}, Dynamic[
+             CurrentValue["MouseOver"]],
+            Alignment->Center,
+            FrameMargins->0,
+            ImageSize->{Automatic, {25, Full}}],
+           Appearance->None,
+           BaselinePosition->Baseline,
+           
+           ButtonFunction:>OutputSizeLimit`ButtonFunction[
+            OutputSizeLimit`Defer, 5, 29106606778433204850, 5 2],
+           Enabled->True,
+           Evaluator->Automatic,
+           Method->"Queued"], 
+          ButtonBox[
+           PaneSelectorBox[{False->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeShowAll"], 
+                StandardForm],
+               ImageSizeCache->{65., {1., 13.}}],
+              StripOnInput->False,
+              DynamicUpdating->True,
+              LineSpacing->{1, 2},
+              LineIndent->0,
+              LinebreakAdjustments->{1., 100, 0, 0, 0}], "OSLControl",
+             StripOnInput->False], True->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeShowAll"], 
+                StandardForm],
+               ImageSizeCache->{65., {1., 13.}}],
+              StripOnInput->False,
+              DynamicUpdating->True,
+              LineSpacing->{1, 2},
+              LineIndent->0,
+              LinebreakAdjustments->{1., 100, 0, 0, 0}], "OSLControlActive",
+             StripOnInput->False]}, Dynamic[
+             CurrentValue["MouseOver"]],
+            Alignment->Center,
+            FrameMargins->0,
+            ImageSize->{Automatic, {25, Full}}],
+           Appearance->None,
+           BaselinePosition->Baseline,
+           
+           ButtonFunction:>OutputSizeLimit`ButtonFunction[
+            OutputSizeLimit`Defer, 5, 29106606778433204850, Infinity],
+           Enabled->True,
+           Evaluator->Automatic,
+           Method->"Queued"], 
+          ButtonBox[
+           PaneSelectorBox[{False->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeChangeLimit"], 
+                StandardForm],
+               ImageSizeCache->{115., {1., 13.}}],
+              StripOnInput->False,
+              DynamicUpdating->True,
+              LineSpacing->{1, 2},
+              LineIndent->0,
+              LinebreakAdjustments->{1., 100, 0, 0, 0}], "OSLControl",
+             StripOnInput->False], True->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeChangeLimit"], 
+                StandardForm]],
+              StripOnInput->False,
+              DynamicUpdating->True,
+              LineSpacing->{1, 2},
+              LineIndent->0,
+              LinebreakAdjustments->{1., 100, 0, 0, 0}], "OSLControlActive",
+             StripOnInput->False]}, Dynamic[
+             CurrentValue["MouseOver"]],
+            Alignment->Center,
+            FrameMargins->0,
+            ImageSize->{Automatic, {25, Full}}],
+           Appearance->None,
+           BaselinePosition->Baseline,
+           ButtonFunction:>FrontEndExecute[{
+              FrontEnd`SetOptions[
+              FrontEnd`$FrontEnd, 
+               FrontEnd`PreferencesSettings -> {"Page" -> "Advanced"}], 
+              FrontEnd`FrontEndToken["PreferencesDialog"]}],
+           Evaluator->None,
+           Method->"Preemptive"]}
+        },
+        AutoDelete->False,
+        FrameStyle->GrayLevel[0.85],
+        GridBoxDividers->{"Columns" -> {False, {True}}},
+        GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+        GridBoxSpacings->{"Columns" -> {{2}}}]}
+     },
+     DefaultBaseStyle->"Column",
+     GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+     GridBoxDividers->{"Columns" -> {{False}}, "Rows" -> {{False}}},
+     GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{1.}}},
+     GridBoxSpacings->{"Columns" -> {
+         Offset[0.27999999999999997`], {
+          Offset[0.5599999999999999]}, 
+         Offset[0.27999999999999997`]}, "Rows" -> {
+         Offset[0.2], 
+         Offset[1.2], {
+          Offset[0.4]}, 
+         Offset[0.2]}}],
+    BaseStyle->"OutputSizeLimit",
+    FrameMargins->{{12, 12}, {0, 15}},
+    FrameStyle->GrayLevel[0.85],
+    RoundingRadius->5,
+    StripOnInput->False],
+   Deploy,
+   DefaultBaseStyle->"Deploy"],
+  If[29106606778433204850 === $SessionID, 
+   Out[5], Message[
+     MessageName[Syntax, "noinfoker"]]; Missing["NotAvailable"]; 
+   Null]]], "Output",
+ CellChangeTimes->{{3.8564421876692944`*^9, 3.856442201507708*^9}, 
+   3.8564434860274706`*^9},
+ CellLabel->"Out[5]=",ExpressionUUID->"bdf94d02-af54-4feb-ab6e-a9408ce5892f"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Max", "[", 
+   RowBox[{"sols", "[", 
+    RowBox[{"[", 
+     RowBox[{"All", ",", 
+      RowBox[{"-", "1"}], ",", 
+      RowBox[{"-", "1"}]}], "]"}], "]"}], "]"}], "//", 
+  "N"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Mean", "[", 
+   RowBox[{"sols", "[", 
+    RowBox[{"[", 
+     RowBox[{"All", ",", 
+      RowBox[{"-", "1"}], ",", 
+      RowBox[{"-", "1"}]}], "]"}], "]"}], "]"}], "//", 
+  "N"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Median", "[", 
+   RowBox[{"sols", "[", 
+    RowBox[{"[", 
+     RowBox[{"All", ",", 
+      RowBox[{"-", "1"}], ",", 
+      RowBox[{"-", "1"}]}], "]"}], "]"}], "]"}], "//", 
+  "N"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Min", "[", 
+   RowBox[{"sols", "[", 
+    RowBox[{"[", 
+     RowBox[{"All", ",", 
+      RowBox[{"-", "1"}], ",", 
+      RowBox[{"-", "1"}]}], "]"}], "]"}], "]"}], "//", "N"}]}], "Input",
+ CellChangeTimes->{{3.856443488623354*^9, 3.85644353282609*^9}},
+ CellLabel->"In[10]:=",ExpressionUUID->"97110dbe-b1b8-4bfe-b122-7f6c727bdde7"],
+
+Cell[BoxData["3.697877883751421135579843412540602972`15.954589770191005*^\
+65405"], "Output",
+ CellChangeTimes->{{3.856443523835941*^9, 3.856443533440896*^9}},
+ CellLabel->"Out[10]=",ExpressionUUID->"4455d745-20b3-47a0-aaf3-4ffd0ebec3c8"],
+
+Cell[BoxData[
+ RowBox[{"-", 
+  "5.69937404344075456794860353512571467705048`15.954589770191005*^196631"}]],\
+ "Output",
+ CellChangeTimes->{{3.856443523835941*^9, 3.856443533646901*^9}},
+ CellLabel->"Out[11]=",ExpressionUUID->"0ac7c761-28c7-43df-9f8f-59afdc8728ad"],
+
+Cell[BoxData["35.057697588830905`"], "Output",
+ CellChangeTimes->{{3.856443523835941*^9, 3.8564435336509013`*^9}},
+ CellLabel->"Out[12]=",ExpressionUUID->"94c89324-a94d-4a46-937d-313d06bb0a4b"],
+
+Cell[BoxData[
+ RowBox[{"-", 
+  "4.1548436776683103836506745`15.954589770191005*^196634"}]], "Output",
+ CellChangeTimes->{{3.856443523835941*^9, 3.8564435336509013`*^9}},
+ CellLabel->"Out[13]=",ExpressionUUID->"19140f19-6a7d-4016-97a6-06bf842f231f"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Clear", "[", "W", "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"W", "[", 
+    RowBox[{
+    "a_", ",", "b_", ",", "c_", ",", "d_", ",", "e_", ",", "f_", ",", 
+     "\[Mu]_", ",", "\[Sigma]_", ",", "x_", ",", "t_"}], "]"}], ":=", 
+   RowBox[{
+    FractionBox[
+     RowBox[{
+      RowBox[{
+       RowBox[{"-", "b"}], " ", "e", " ", 
+       SuperscriptBox["\[ExponentialE]", 
+        RowBox[{"-", 
+         FractionBox[
+          SuperscriptBox[
+           RowBox[{"(", 
+            RowBox[{"x", "-", "\[Mu]"}], ")"}], "2"], 
+          RowBox[{"2", " ", 
+           SuperscriptBox["\[Sigma]", "2"]}]]}]], " ", 
+       SqrtBox[
+        FractionBox["2", "\[Pi]"]]}], "+", 
+      RowBox[{"2", " ", "a", " ", "c", " ", "\[Sigma]"}], "-", 
+      RowBox[{"2", " ", "b", " ", 
+       RowBox[{"(", 
+        RowBox[{"d", "+", 
+         RowBox[{"c", " ", "t"}]}], ")"}], " ", "\[Sigma]"}]}], 
+     RowBox[{"2", " ", 
+      SuperscriptBox["b", "2"], " ", "\[Sigma]"}]], "+", 
+    RowBox[{
+     SuperscriptBox["\[ExponentialE]", 
+      RowBox[{"-", 
+       FractionBox[
+        RowBox[{"b", " ", "t"}], "a"]}]], " ", "f"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Solve", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"D", "[", 
+       RowBox[{
+        RowBox[{"W", "[", 
+         RowBox[{
+         "a", ",", "b", ",", "c", ",", "d", ",", "e", ",", "f", ",", "\[Mu]", 
+          ",", "\[Sigma]", ",", "x", ",", "t"}], "]"}], ",", "a"}], "]"}], 
+      "\[Equal]", "0"}], ",", 
+     RowBox[{
+      RowBox[{"D", "[", 
+       RowBox[{
+        RowBox[{"W", "[", 
+         RowBox[{
+         "a", ",", "b", ",", "c", ",", "d", ",", "e", ",", "f", ",", "\[Mu]", 
+          ",", "\[Sigma]", ",", "x", ",", "t"}], "]"}], ",", "b"}], "]"}], 
+      "\[Equal]", "0"}], ",", 
+     RowBox[{
+      RowBox[{"D", "[", 
+       RowBox[{
+        RowBox[{"W", "[", 
+         RowBox[{
+         "a", ",", "b", ",", "c", ",", "d", ",", "e", ",", "f", ",", "\[Mu]", 
+          ",", "\[Sigma]", ",", "x", ",", "t"}], "]"}], ",", "c"}], "]"}], 
+      "\[Equal]", "0"}], ",", 
+     RowBox[{
+      RowBox[{"D", "[", 
+       RowBox[{
+        RowBox[{"W", "[", 
+         RowBox[{
+         "a", ",", "b", ",", "c", ",", "d", ",", "e", ",", "f", ",", "\[Mu]", 
+          ",", "\[Sigma]", ",", "x", ",", "t"}], "]"}], ",", "d"}], "]"}], 
+      "\[Equal]", "0"}], ",", 
+     RowBox[{
+      RowBox[{"D", "[", 
+       RowBox[{
+        RowBox[{"W", "[", 
+         RowBox[{
+         "a", ",", "b", ",", "c", ",", "d", ",", "e", ",", "f", ",", "\[Mu]", 
+          ",", "\[Sigma]", ",", "x", ",", "t"}], "]"}], ",", "e"}], "]"}], 
+      "\[Equal]", "0"}], ",", 
+     RowBox[{
+      RowBox[{"D", "[", 
+       RowBox[{
+        RowBox[{"W", "[", 
+         RowBox[{
+         "a", ",", "b", ",", "c", ",", "d", ",", "e", ",", "f", ",", "\[Mu]", 
+          ",", "\[Sigma]", ",", "x", ",", "t"}], "]"}], ",", "f"}], "]"}], 
+      "\[Equal]", "0"}], ",", 
+     RowBox[{
+      RowBox[{"D", "[", 
+       RowBox[{
+        RowBox[{"W", "[", 
+         RowBox[{
+         "a", ",", "b", ",", "c", ",", "d", ",", "e", ",", "f", ",", "\[Mu]", 
+          ",", "\[Sigma]", ",", "x", ",", "t"}], "]"}], ",", "\[Mu]"}], "]"}],
+       "\[Equal]", "0"}], ",", 
+     RowBox[{
+      RowBox[{"D", "[", 
+       RowBox[{
+        RowBox[{"W", "[", 
+         RowBox[{
+         "a", ",", "b", ",", "c", ",", "d", ",", "e", ",", "f", ",", "\[Mu]", 
+          ",", "\[Sigma]", ",", "x", ",", "t"}], "]"}], ",", "\[Sigma]"}], 
+       "]"}], "\[Equal]", "0"}], ",", 
+     RowBox[{
+      RowBox[{"D", "[", 
+       RowBox[{
+        RowBox[{"W", "[", 
+         RowBox[{
+         "a", ",", "b", ",", "c", ",", "d", ",", "e", ",", "f", ",", "\[Mu]", 
+          ",", "\[Sigma]", ",", "x", ",", "t"}], "]"}], ",", "x"}], "]"}], 
+      "\[Equal]", "0"}], ",", 
+     RowBox[{
+      RowBox[{"D", "[", 
+       RowBox[{
+        RowBox[{"W", "[", 
+         RowBox[{
+         "a", ",", "b", ",", "c", ",", "d", ",", "e", ",", "f", ",", "\[Mu]", 
+          ",", "\[Sigma]", ",", "x", ",", "t"}], "]"}], ",", "t"}], "]"}], 
+      "\[Equal]", "0"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "a", ",", "b", ",", "c", ",", "d", ",", "e", ",", "f", ",", "\[Mu]", ",", 
+     "\[Sigma]", ",", "x", ",", "t"}], "}"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.8564351172116857`*^9, 3.8564351473200126`*^9}, {
+   3.8564354902450933`*^9, 3.8564354910888233`*^9}, 3.85643675787405*^9, {
+   3.856438238079047*^9, 3.856438246375636*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"0d8ce379-f167-42f7-85b0-98813c0fe70b"],
+
+Cell[BoxData[
+ RowBox[{"{", "}"}]], "Output",
+ CellChangeTimes->{3.8564384894926777`*^9, 3.88754389595742*^9},
+ CellLabel->"Out[3]=",ExpressionUUID->"b0f28a59-80c1-46b6-b9d9-c6406fd78daa"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"n", "=", "729"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"W", "[", "t_", "]"}], ":=", 
+   RowBox[{
+    FractionBox[
+     RowBox[{
+      RowBox[{
+       RowBox[{"-", "b"}], " ", "e", " ", 
+       RowBox[{"Exp", "[", 
+        RowBox[{"-", 
+         FractionBox[
+          SuperscriptBox[
+           RowBox[{"(", 
+            RowBox[{"x", "-", "\[Mu]"}], ")"}], "2"], 
+          RowBox[{"2", " ", 
+           SuperscriptBox["\[Sigma]", "2"]}]]}], "]"}], " ", 
+       SqrtBox[
+        FractionBox["2", "\[Pi]"]]}], "+", 
+      RowBox[{"2", " ", "a", " ", "c", " ", "\[Sigma]"}], "-", 
+      RowBox[{"2", " ", "b", " ", 
+       RowBox[{"(", 
+        RowBox[{"d", "+", 
+         RowBox[{"c", " ", "t"}]}], ")"}], " ", "\[Sigma]"}]}], 
+     RowBox[{"2", " ", 
+      SuperscriptBox["b", "2"], " ", "\[Sigma]"}]], "+", 
+    RowBox[{
+     RowBox[{"Exp", "[", 
+      RowBox[{"-", 
+       FractionBox[
+        RowBox[{"b", " ", "t"}], "a"]}], "]"}], " ", "f"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"sols", "=", 
+   RowBox[{"FindInstance", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"n", " ", 
+       RowBox[{"W", "[", "t", "]"}]}], "\[Equal]", 
+      RowBox[{"Evaluate", "[", 
+       RowBox[{
+        SubsuperscriptBox["\[Integral]", "0", "m"], 
+        RowBox[{
+         RowBox[{"W", "[", "t", "]"}], 
+         RowBox[{"\[DifferentialD]", "x"}]}]}], "]"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+      "a", ",", "b", ",", "c", ",", "d", ",", "e", ",", "f", ",", "x", ",", 
+       "m", ",", "\[Mu]", ",", "\[Sigma]", ",", "t"}], "}"}], ",", "Reals", 
+     ",", "7"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Sort", "[", "sols", "]"}]}], "Input",
+ CellChangeTimes->{{3.85617469429793*^9, 3.856174702078889*^9}, {
+  3.8561747749201174`*^9, 3.8561747755763483`*^9}},
+ CellLabel->"In[98]:=",ExpressionUUID->"aedca1f5-786c-4a52-882e-b9330c8f5633"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", 
+      InterpretationBox[
+       TemplateBox[{"Root", 
+         InterpretationBox[
+          StyleBox[
+           TemplateBox[{"\"-0.368\"", 
+             DynamicBox[
+              FEPrivate`FrontEndResource[
+              "FEExpressions", "NumericalApproximationElider"]]}, 
+            "RowDefault"], ShowStringCharacters -> 
+           False], -0.3682652362164091086604855718178441748`15.\
+954589770191003, Editable -> False], 
+         TagBox[
+          RowBox[{"Root", "[", 
+            RowBox[{"{", 
+              RowBox[{
+                RowBox[{
+                  RowBox[{
+                    RowBox[{"-", 
+                    FractionBox["2743052", "25"]}], "-", 
+                    RowBox[{
+                    FractionBox["1819", "25"], " ", 
+                    SuperscriptBox["\[ExponentialE]", 
+                    FractionBox["12", 
+                    RowBox[{"25", " ", "#1"}]]]}], "-", 
+                    FractionBox[
+                    RowBox[{"11664", " ", 
+                    SqrtBox[
+                    FractionBox["2", "\[Pi]"]]}], 
+                    RowBox[{"79", " ", 
+                    SuperscriptBox["\[ExponentialE]", 
+                    RowBox[{"81", "/", "1248200"}]]}]], "+", 
+                    RowBox[{"16", " ", 
+                    RowBox[{"Erf", "[", 
+                    FractionBox["9", 
+                    RowBox[{"395", " ", 
+                    SqrtBox["2"]}]], "]"}]}], "-", 
+                    RowBox[{"16", " ", 
+                    RowBox[{"Erf", "[", 
+                    FractionBox[
+                    SqrtBox["2"], "395"], "]"}]}], "-", 
+                    RowBox[{"298316", " ", "#1"}]}], "&"}], ",", 
+                
+                RowBox[{
+                 "-", "0.\
+3682652362164091007787593461423953701748815528143756809492`30."}]}], "}"}], 
+            "]"}], Short[#, 7]& ], -0.3682652362164091},
+        "NumericalApproximation"],
+       Root[{
+        Rational[-2743052, 25] + 
+         Rational[-1819, 25] 
+          E^(Rational[12, 25]/#) + (Rational[-11664, 79] 
+           E^Rational[-81, 1248200]) (2/Pi)^Rational[1, 2] + 
+         16 Erf[Rational[9, 395] 2^Rational[-1, 2]] - 16 
+         Erf[Rational[1, 395] 2^Rational[1, 2]] - 
+         298316 #& , \
+-0.3682652362164091007787593461423953701748815528143756809492`30.}]]}], ",", 
+     RowBox[{"b", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["1", "10"]}]}], ",", 
+     RowBox[{"c", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["41", "10"]}]}], ",", 
+     RowBox[{"d", "\[Rule]", 
+      FractionBox["23", "5"]}], ",", 
+     RowBox[{"e", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["16", "5"]}]}], ",", 
+     RowBox[{"f", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["1", "10"]}]}], ",", 
+     RowBox[{"x", "\[Rule]", 
+      FractionBox["9", "10"]}], ",", 
+     RowBox[{"m", "\[Rule]", 
+      FractionBox["7", "5"]}], ",", 
+     RowBox[{"\[Mu]", "\[Rule]", 
+      FractionBox["9", "5"]}], ",", 
+     RowBox[{"\[Sigma]", "\[Rule]", "79"}], ",", 
+     RowBox[{"t", "\[Rule]", 
+      FractionBox["24", "5"]}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", 
+      InterpretationBox[
+       TemplateBox[{"Root", 
+         InterpretationBox[
+          StyleBox[
+           TemplateBox[{"\"4.90\"", 
+             DynamicBox[
+              FEPrivate`FrontEndResource[
+              "FEExpressions", "NumericalApproximationElider"]]}, 
+            "RowDefault"], ShowStringCharacters -> False], 
+          4.90054666267468874707446957472711801529`15.954589770191003, 
+          Editable -> False], 
+         TagBox[
+          RowBox[{"Root", "[", 
+            RowBox[{"{", 
+              RowBox[{
+                RowBox[{
+                  RowBox[{
+                    FractionBox["342436", "125"], "-", 
+                    FractionBox[
+                    RowBox[{"4353", " ", 
+                    SuperscriptBox["\[ExponentialE]", 
+                    RowBox[{"-", 
+                    FractionBox["7", "#1"]}]]}], "2"], "-", 
+                    RowBox[{
+                    FractionBox["2916", "25"], " ", 
+                    SqrtBox[
+                    FractionBox["2", 
+                    RowBox[{"\[ExponentialE]", " ", "\[Pi]"}]]]}], "+", 
+                    RowBox[{
+                    FractionBox["4", "25"], " ", 
+                    RowBox[{"Erf", "[", 
+                    FractionBox["19", 
+                    RowBox[{"10", " ", 
+                    SqrtBox["2"]}]], "]"}]}], "+", 
+                    RowBox[{
+                    FractionBox["4", "25"], " ", 
+                    RowBox[{"Erf", "[", 
+                    FractionBox[
+                    RowBox[{"4", " ", 
+                    SqrtBox["2"]}], "5"], "]"}]}], "-", 
+                    FractionBox[
+                    RowBox[{"55138", " ", "#1"}], "125"]}], "&"}], ",", 
+                "4.9005466626746890570203960113487644209302995859526023357434`\
+30."}], "}"}], "]"}], Short[#, 7]& ], 4.900546662674689},
+        "NumericalApproximation"],
+       Root[{
+        Rational[342436, 125] + Rational[-4353, 2] E^((-7)/#) + 
+         Rational[-2916, 25] (2 (E^(-1)/Pi))^Rational[1, 2] + 
+         Rational[4, 25] Erf[Rational[19, 10] 2^Rational[-1, 2]] + 
+         Rational[4, 25] Erf[Rational[4, 5] 2^Rational[1, 2]] + 
+         Rational[-55138, 125] #& , 
+         4.9005466626746890570203960113487644209302995859526023357434`30.}]]}]\
+, ",", 
+     RowBox[{"b", "\[Rule]", 
+      FractionBox["5", "2"]}], ",", 
+     RowBox[{"c", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["19", "5"]}]}], ",", 
+     RowBox[{"d", "\[Rule]", 
+      FractionBox["6", "5"]}], ",", 
+     RowBox[{"e", "\[Rule]", 
+      FractionBox["4", "5"]}], ",", 
+     RowBox[{"f", "\[Rule]", 
+      RowBox[{"-", "3"}]}], ",", 
+     RowBox[{"x", "\[Rule]", 
+      FractionBox["13", "5"]}], ",", 
+     RowBox[{"m", "\[Rule]", 
+      FractionBox["7", "2"]}], ",", 
+     RowBox[{"\[Mu]", "\[Rule]", 
+      FractionBox["8", "5"]}], ",", 
+     RowBox[{"\[Sigma]", "\[Rule]", "1"}], ",", 
+     RowBox[{"t", "\[Rule]", 
+      FractionBox["14", "5"]}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", 
+      InterpretationBox[
+       TemplateBox[{"Root", 
+         InterpretationBox[
+          StyleBox[
+           TemplateBox[{"\"-8.61\"", 
+             DynamicBox[
+              FEPrivate`FrontEndResource[
+              "FEExpressions", "NumericalApproximationElider"]]}, 
+            "RowDefault"], ShowStringCharacters -> 
+           False], -8.61025553599274928728846134617924690247`15.\
+954589770191003, Editable -> False], 
+         TagBox[
+          RowBox[{"Root", "[", 
+            RowBox[{"{", 
+              RowBox[{
+                RowBox[{
+                  RowBox[{
+                    RowBox[{"-", 
+                    FractionBox["123947", "1000"]}], "-", 
+                    RowBox[{
+                    FractionBox["7291", "5"], " ", 
+                    SuperscriptBox["\[ExponentialE]", 
+                    RowBox[{"-", 
+                    FractionBox["6", 
+                    RowBox[{"5", " ", "#1"}]]}]]}], "+", 
+                    FractionBox["8019", 
+                    RowBox[{"40", " ", 
+                    SuperscriptBox["\[ExponentialE]", 
+                    RowBox[{"2", "/", "25"}]], " ", 
+                    SqrtBox[
+                    RowBox[{"2", " ", "\[Pi]"}]]}]], "-", 
+                    RowBox[{
+                    FractionBox["11", "20"], " ", 
+                    RowBox[{"Erf", "[", 
+                    FractionBox["1", 
+                    RowBox[{"20", " ", 
+                    SqrtBox["2"]}]], "]"}]}], "+", 
+                    RowBox[{
+                    FractionBox["11", "20"], " ", 
+                    RowBox[{"Erf", "[", 
+                    FractionBox["3", 
+                    RowBox[{"40", " ", 
+                    SqrtBox["2"]}]], "]"}]}], "-", 
+                    FractionBox[
+                    RowBox[{"80201", " ", "#1"}], "400"]}], "&"}], ",", 
+                
+                RowBox[{
+                 "-", "8.\
+6102555359927498427235221360170860279524722338667472914637`30."}]}], "}"}], 
+            "]"}], Short[#, 7]& ], -8.61025553599275},
+        "NumericalApproximation"],
+       Root[{
+        Rational[-123947, 1000] + 
+         Rational[-7291, 5] 
+          E^(Rational[-6, 5]/#) + (Rational[8019, 40] 
+           E^Rational[-2, 25]) (2 Pi)^Rational[-1, 2] + 
+         Rational[-11, 20] Erf[Rational[1, 20] 2^Rational[-1, 2]] + 
+         Rational[11, 20] Erf[Rational[3, 40] 2^Rational[-1, 2]] + 
+         Rational[-80201, 
+            400] #& , \
+-8.6102555359927498427235221360170860279524722338667472914637`30.}]]}], ",", 
+     RowBox[{"b", "\[Rule]", "2"}], ",", 
+     RowBox[{"c", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["11", "10"]}]}], ",", 
+     RowBox[{"d", "\[Rule]", "1"}], ",", 
+     RowBox[{"e", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["11", "5"]}]}], ",", 
+     RowBox[{"f", "\[Rule]", 
+      RowBox[{"-", "2"}]}], ",", 
+     RowBox[{"x", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["19", "10"]}]}], ",", 
+     RowBox[{"m", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["1", "10"]}]}], ",", 
+     RowBox[{"\[Mu]", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["3", "10"]}]}], ",", 
+     RowBox[{"\[Sigma]", "\[Rule]", "4"}], ",", 
+     RowBox[{"t", "\[Rule]", 
+      FractionBox["3", "5"]}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", 
+      InterpretationBox[
+       TemplateBox[{"Root", 
+         InterpretationBox[
+          StyleBox[
+           TemplateBox[{"\"-16.3\"", 
+             DynamicBox[
+              FEPrivate`FrontEndResource[
+              "FEExpressions", "NumericalApproximationElider"]]}, 
+            "RowDefault"], ShowStringCharacters -> 
+           False], -16.29663766866996965632097271736711263657`15.\
+954589770191003, Editable -> False], 
+         TagBox[
+          RowBox[{"Root", "[", 
+            RowBox[{"{", 
+              RowBox[{
+                RowBox[{
+                  RowBox[{
+                    RowBox[{"-", 
+                    FractionBox["5920799", "2400"]}], "+", 
+                    RowBox[{
+                    FractionBox["79717", "100"], " ", 
+                    SuperscriptBox["\[ExponentialE]", 
+                    FractionBox["552", 
+                    RowBox[{"25", " ", "#1"}]]]}], "+", 
+                    FractionBox["243", 
+                    RowBox[{"16", " ", 
+                    SuperscriptBox["\[ExponentialE]", 
+                    RowBox[{"49", "/", "3200"}]], " ", 
+                    SqrtBox[
+                    RowBox[{"2", " ", "\[Pi]"}]]}]], "+", 
+                    RowBox[{
+                    FractionBox["1", "8"], " ", 
+                    RowBox[{"Erf", "[", 
+                    FractionBox["1", 
+                    RowBox[{"24", " ", 
+                    SqrtBox["2"]}]], "]"}]}], "-", 
+                    RowBox[{
+                    FractionBox["1", "8"], " ", 
+                    RowBox[{"Erf", "[", 
+                    FractionBox[
+                    SqrtBox["2"], "5"], "]"}]}], "-", 
+                    FractionBox[
+                    RowBox[{"79717", " ", "#1"}], "576"]}], "&"}], ",", 
+                
+                RowBox[{
+                 "-", "16.29663766866997137627596205487398691005`30."}]}], 
+              "}"}], "]"}], Short[#, 7]& ], -16.29663766866997},
+        "NumericalApproximation"],
+       Root[{
+        Rational[-5920799, 2400] + 
+         Rational[79717, 100] 
+          E^(Rational[552, 25]/#) + (Rational[243, 16] 
+           E^Rational[-49, 3200]) (2 Pi)^Rational[-1, 2] + 
+         Rational[1, 8] Erf[Rational[1, 24] 2^Rational[-1, 2]] + 
+         Rational[-1, 8] Erf[Rational[1, 5] 2^Rational[1, 2]] + 
+         Rational[-79717, 
+            576] #& , -16.29663766866997137627596205487398691005`30.}]]}], 
+     ",", 
+     RowBox[{"b", "\[Rule]", 
+      FractionBox["24", "5"]}], ",", 
+     RowBox[{"c", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["22", "5"]}]}], ",", 
+     RowBox[{"d", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["39", "10"]}]}], ",", 
+     RowBox[{"e", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["6", "5"]}]}], ",", 
+     RowBox[{"f", "\[Rule]", 
+      FractionBox["11", "10"]}], ",", 
+     RowBox[{"x", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["13", "5"]}]}], ",", 
+     RowBox[{"m", "\[Rule]", 
+      FractionBox["43", "10"]}], ",", 
+     RowBox[{"\[Mu]", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["1", "2"]}]}], ",", 
+     RowBox[{"\[Sigma]", "\[Rule]", "12"}], ",", 
+     RowBox[{"t", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["23", "5"]}]}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", 
+      InterpretationBox[
+       TemplateBox[{"Root", 
+         InterpretationBox[
+          StyleBox[
+           TemplateBox[{"\"16.7\"", 
+             DynamicBox[
+              FEPrivate`FrontEndResource[
+              "FEExpressions", "NumericalApproximationElider"]]}, 
+            "RowDefault"], ShowStringCharacters -> False], 
+          16.68086742773151698315814428497105836868`15.954589770191003, 
+          Editable -> False], 
+         TagBox[
+          RowBox[{"Root", "[", 
+            RowBox[{"{", 
+              RowBox[{
+                RowBox[{
+                  RowBox[{
+                    RowBox[{"-", 
+                    FractionBox["1602594", "625"]}], "-", 
+                    RowBox[{
+                    FractionBox["41791", "25"], " ", 
+                    SuperscriptBox["\[ExponentialE]", 
+                    RowBox[{"-", 
+                    FractionBox["39", 
+                    RowBox[{"4", " ", "#1"}]]}]]}], "+", 
+                    FractionBox[
+                    RowBox[{"8748", " ", 
+                    SqrtBox[
+                    FractionBox["2", "\[Pi]"]]}], 
+                    RowBox[{"1625", " ", 
+                    SuperscriptBox["\[ExponentialE]", 
+                    RowBox[{"2", "/", "105625"}]]}]], "-", 
+                    RowBox[{
+                    FractionBox["12", "25"], " ", 
+                    RowBox[{"Erf", "[", 
+                    FractionBox["9", 
+                    RowBox[{"650", " ", 
+                    SqrtBox["2"]}]], "]"}]}], "-", 
+                    RowBox[{
+                    FractionBox["12", "25"], " ", 
+                    RowBox[{"Erf", "[", 
+                    FractionBox["1", 
+                    RowBox[{"50", " ", 
+                    SqrtBox["2"]}]], "]"}]}], "+", 
+                    FractionBox[
+                    RowBox[{"130824", " ", "#1"}], "625"]}], "&"}], ",", 
+                "16.68086742773151572106317521891657051473`30."}], "}"}], 
+            "]"}], Short[#, 7]& ], 16.680867427731517`},
+        "NumericalApproximation"],
+       Root[{
+        Rational[-1602594, 625] + 
+         Rational[-41791, 25] 
+          E^(Rational[-39, 4]/#) + (Rational[8748, 1625] 
+           E^Rational[-2, 105625]) (2/Pi)^Rational[1, 2] + 
+         Rational[-12, 25] Erf[Rational[9, 650] 2^Rational[-1, 2]] + 
+         Rational[-12, 25] Erf[Rational[1, 50] 2^Rational[-1, 2]] + 
+         Rational[130824, 625] #& , 
+         16.68086742773151572106317521891657051473`30.}]]}], ",", 
+     RowBox[{"b", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["5", "2"]}]}], ",", 
+     RowBox[{"c", "\[Rule]", 
+      FractionBox["9", "5"]}], ",", 
+     RowBox[{"d", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["9", "5"]}]}], ",", 
+     RowBox[{"e", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["12", "5"]}]}], ",", 
+     RowBox[{"f", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["23", "10"]}]}], ",", 
+     RowBox[{"x", "\[Rule]", 
+      FractionBox["1", "2"]}], ",", 
+     RowBox[{"m", "\[Rule]", 
+      FractionBox["11", "5"]}], ",", 
+     RowBox[{"\[Mu]", "\[Rule]", 
+      FractionBox["9", "10"]}], ",", 
+     RowBox[{"\[Sigma]", "\[Rule]", 
+      RowBox[{"-", "65"}]}], ",", 
+     RowBox[{"t", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["39", "10"]}]}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", 
+      InterpretationBox[
+       TemplateBox[{"Root", 
+         InterpretationBox[
+          StyleBox[
+           TemplateBox[{"\"-11.9\"", 
+             DynamicBox[
+              FEPrivate`FrontEndResource[
+              "FEExpressions", "NumericalApproximationElider"]]}, 
+            "RowDefault"], ShowStringCharacters -> 
+           False], -11.85109780151969616213136760052293539047`15.\
+954589770191003, Editable -> False], 
+         TagBox[
+          RowBox[{"Root", "[", 
+            RowBox[{"{", 
+              RowBox[{
+                RowBox[{
+                  RowBox[{
+                    RowBox[{"-", 
+                    FractionBox["1479261", "625"]}], "+", 
+                    FractionBox[
+                    RowBox[{"167601", " ", 
+                    SuperscriptBox["\[ExponentialE]", 
+                    RowBox[{"-", 
+                    FractionBox["6", "#1"]}]]}], "50"], "-", 
+                    FractionBox["26973", 
+                    RowBox[{"650", " ", 
+                    SuperscriptBox["\[ExponentialE]", 
+                    RowBox[{"1", "/", "135200"}]], " ", 
+                    SqrtBox[
+                    RowBox[{"2", " ", "\[Pi]"}]]}]], "-", 
+                    RowBox[{
+                    FractionBox["37", "50"], " ", 
+                    RowBox[{"Erf", "[", 
+                    FractionBox["1", 
+                    RowBox[{"65", " ", 
+                    SqrtBox["2"]}]], "]"}]}], "+", 
+                    RowBox[{
+                    FractionBox["37", "50"], " ", 
+                    RowBox[{"Erf", "[", 
+                    FractionBox["7", 
+                    RowBox[{"260", " ", 
+                    SqrtBox["2"]}]], "]"}]}], "+", 
+                    FractionBox[
+                    RowBox[{"167601", " ", "#1"}], "625"]}], "&"}], ",", 
+                
+                RowBox[{
+                 "-", "11.\
+8510978015196962650382699608758931798331116374485184961977`30."}]}], "}"}], 
+            "]"}], Short[#, 7]& ], -11.851097801519696`},
+        "NumericalApproximation"],
+       Root[{
+        Rational[-1479261, 625] + 
+         Rational[167601, 50] 
+          E^((-6)/#) + (Rational[-26973, 650] E^Rational[-1, 135200]) (2 Pi)^
+           Rational[-1, 2] + 
+         Rational[-37, 50] Erf[Rational[1, 65] 2^Rational[-1, 2]] + 
+         Rational[37, 50] Erf[Rational[7, 260] 2^Rational[-1, 2]] + 
+         Rational[
+           167601, 625] #& , \
+-11.8510978015196962650382699608758931798331116374485184961977`30.}]]}], ",", 
+     RowBox[{"b", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["5", "2"]}]}], ",", 
+     RowBox[{"c", "\[Rule]", 
+      FractionBox["23", "10"]}], ",", 
+     RowBox[{"d", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["13", "5"]}]}], ",", 
+     RowBox[{"e", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["37", "10"]}]}], ",", 
+     RowBox[{"f", "\[Rule]", 
+      FractionBox["23", "5"]}], ",", 
+     RowBox[{"x", "\[Rule]", 
+      FractionBox["4", "5"]}], ",", 
+     RowBox[{"m", "\[Rule]", 
+      FractionBox["3", "10"]}], ",", 
+     RowBox[{"\[Mu]", "\[Rule]", 
+      FractionBox["7", "10"]}], ",", 
+     RowBox[{"\[Sigma]", "\[Rule]", "26"}], ",", 
+     RowBox[{"t", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["12", "5"]}]}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", 
+      InterpretationBox[
+       TemplateBox[{"Root", 
+         InterpretationBox[
+          StyleBox[
+           TemplateBox[{"\"6.00\"", 
+             DynamicBox[
+              FEPrivate`FrontEndResource[
+              "FEExpressions", "NumericalApproximationElider"]]}, 
+            "RowDefault"], ShowStringCharacters -> False], 
+          6.00052833395410178951578927808441221714`15.954589770191003, 
+          Editable -> False], 
+         TagBox[
+          RowBox[{"Root", "[", 
+            RowBox[{"{", 
+              RowBox[{
+                RowBox[{
+                  RowBox[{
+                    RowBox[{"-", 
+                    FractionBox["16214", "5"]}], "-", 
+                    RowBox[{
+                    FractionBox["10527", "5"], " ", 
+                    SuperscriptBox["\[ExponentialE]", 
+                    RowBox[{"-", 
+                    FractionBox["48", 
+                    RowBox[{"25", " ", "#1"}]]}]]}], "-", 
+                    FractionBox["3483", 
+                    RowBox[{"20", " ", 
+                    SuperscriptBox["\[ExponentialE]", 
+                    RowBox[{"289", "/", "45000"}]], " ", 
+                    SqrtBox[
+                    RowBox[{"2", " ", "\[Pi]"}]]}]], "+", 
+                    RowBox[{
+                    FractionBox["43", "24"], " ", 
+                    RowBox[{"Erf", "[", 
+                    FractionBox["19", 
+                    RowBox[{"75", " ", 
+                    SqrtBox["2"]}]], "]"}]}], "-", 
+                    RowBox[{
+                    FractionBox["43", "24"], " ", 
+                    RowBox[{"Erf", "[", 
+                    FractionBox[
+                    RowBox[{"2", " ", 
+                    SqrtBox["2"]}], "75"], "]"}]}], "+", 
+                    FractionBox[
+                    RowBox[{"2420", " ", "#1"}], "3"]}], "&"}], ",", 
+                "6.0005283339541018507602810632286310349219080800104785851014`\
+30."}], "}"}], "]"}], Short[#, 7]& ], 6.000528333954102},
+        "NumericalApproximation"],
+       Root[{
+        Rational[-16214, 5] + 
+         Rational[-10527, 5] 
+          E^(Rational[-48, 25]/#) + (Rational[-3483, 20] 
+           E^Rational[-289, 45000]) (2 Pi)^Rational[-1, 2] + 
+         Rational[43, 24] Erf[Rational[19, 75] 2^Rational[-1, 2]] + 
+         Rational[-43, 24] Erf[Rational[2, 75] 2^Rational[1, 2]] + 
+         Rational[2420, 3] #& , 
+         6.0005283339541018507602810632286310349219080800104785851014`30.}]]}]\
+, ",", 
+     RowBox[{"b", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["6", "5"]}]}], ",", 
+     RowBox[{"c", "\[Rule]", 
+      FractionBox["8", "5"]}], ",", 
+     RowBox[{"d", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["14", "5"]}]}], ",", 
+     RowBox[{"e", "\[Rule]", 
+      FractionBox["43", "10"]}], ",", 
+     RowBox[{"f", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["29", "10"]}]}], ",", 
+     RowBox[{"x", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["5", "2"]}]}], ",", 
+     RowBox[{"m", "\[Rule]", "3"}], ",", 
+     RowBox[{"\[Mu]", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["4", "5"]}]}], ",", 
+     RowBox[{"\[Sigma]", "\[Rule]", 
+      RowBox[{"-", "15"}]}], ",", 
+     RowBox[{"t", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["8", "5"]}]}]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{{3.8561747190157957`*^9, 3.856174740686921*^9}, 
+   3.856438209095673*^9},
+ CellLabel->
+  "Out[101]=",ExpressionUUID->"64e7e688-243a-4759-883c-11f38fcd145e"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"n", "=", 
+   FractionBox["729", "3"]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"W", "[", "t_", "]"}], ":=", 
+   RowBox[{
+    FractionBox[
+     RowBox[{
+      RowBox[{
+       RowBox[{"-", "b"}], " ", "e", " ", 
+       RowBox[{"Exp", "[", 
+        RowBox[{"-", 
+         FractionBox[
+          SuperscriptBox[
+           RowBox[{"(", 
+            RowBox[{"x", "-", "\[Mu]"}], ")"}], "2"], 
+          RowBox[{"2", " ", 
+           SuperscriptBox["\[Sigma]", "2"]}]]}], "]"}], " ", 
+       SqrtBox[
+        FractionBox["2", "\[Pi]"]]}], "+", 
+      RowBox[{"2", " ", "a", " ", "c", " ", "\[Sigma]"}], "-", 
+      RowBox[{"2", " ", "b", " ", 
+       RowBox[{"(", 
+        RowBox[{"d", "+", 
+         RowBox[{"c", " ", "t"}]}], ")"}], " ", "\[Sigma]"}]}], 
+     RowBox[{"2", " ", 
+      SuperscriptBox["b", "2"], " ", "\[Sigma]"}]], "+", 
+    RowBox[{
+     RowBox[{"Exp", "[", 
+      RowBox[{"-", 
+       FractionBox[
+        RowBox[{"b", " ", "t"}], "a"]}], "]"}], " ", "f"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"sols", "=", 
+   RowBox[{"FindInstance", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"n", " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"W", "[", "t", "]"}], "+", 
+         FractionBox[
+          RowBox[{"W", "[", "t", "]"}], 
+          RowBox[{"1", "+", "r"}]], "+", 
+         FractionBox[
+          RowBox[{"W", "[", "t", "]"}], 
+          SuperscriptBox[
+           RowBox[{"(", 
+            RowBox[{"1", "+", "r"}], ")"}], "2"]]}], ")"}]}], "\[Equal]", 
+      RowBox[{"Evaluate", "[", 
+       RowBox[{
+        SubsuperscriptBox["\[Integral]", "0", "m"], 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"W", "[", "t", "]"}], "+", 
+           FractionBox[
+            RowBox[{"W", "[", "t", "]"}], 
+            RowBox[{"1", "+", "r"}]], "+", 
+           FractionBox[
+            RowBox[{"W", "[", "t", "]"}], 
+            SuperscriptBox[
+             RowBox[{"(", 
+              RowBox[{"1", "+", "r"}], ")"}], "2"]]}], ")"}], 
+         RowBox[{"\[DifferentialD]", "x"}]}]}], "]"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+      "a", ",", "b", ",", "c", ",", "d", ",", "e", ",", "f", ",", "x", ",", 
+       "m", ",", "\[Mu]", ",", "\[Sigma]", ",", "r", ",", "t"}], "}"}], ",", 
+     "Reals", ",", "7"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Sort", "[", "sols", "]"}]}], "Input",
+ CellChangeTimes->{
+  3.8556269281227493`*^9, {3.8556269741992655`*^9, 3.8556270616492805`*^9}, 
+   3.855627991727334*^9, {3.8561745551620965`*^9, 3.8561745554277134`*^9}, {
+   3.856174793185108*^9, 3.856174797981818*^9}, {3.856234706525836*^9, 
+   3.856234706791429*^9}, {3.8562350636232595`*^9, 3.856235063717004*^9}},
+ CellLabel->
+  "In[102]:=",ExpressionUUID->"39deb915-3909-4e1d-8fc0-53db827917bc"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", 
+      InterpretationBox[
+       TemplateBox[{"Root", 
+         InterpretationBox[
+          StyleBox[
+           TemplateBox[{"\"2.12\"", 
+             DynamicBox[
+              FEPrivate`FrontEndResource[
+              "FEExpressions", "NumericalApproximationElider"]]}, 
+            "RowDefault"], ShowStringCharacters -> False], 
+          2.12181783460241835115311914705671370029`15.954589770191003, 
+          Editable -> False], 
+         TagBox[
+          RowBox[{"Root", "[", 
+            RowBox[{"{", 
+              RowBox[{
+                RowBox[{
+                  RowBox[{
+                    FractionBox["319730463", "46225"], "-", 
+                    FractionBox[
+                    RowBox[{"26399763", " ", 
+                    SuperscriptBox["\[ExponentialE]", 
+                    RowBox[{"-", 
+                    FractionBox["119", 
+                    RowBox[{"50", " ", "#1"}]]}]]}], "46225"], "+", 
+                    FractionBox[
+                    RowBox[{"18225", " ", 
+                    SqrtBox[
+                    FractionBox["2", "\[Pi]"]]}], 
+                    RowBox[{"245917", " ", 
+                    SuperscriptBox["\[ExponentialE]", 
+                    RowBox[{"49", "/", "72200"}]]}]], "+", 
+                    FractionBox["38637", 
+                    RowBox[{"11438", " ", 
+                    SuperscriptBox["\[ExponentialE]", 
+                    RowBox[{"49", "/", "72200"}]], " ", 
+                    SqrtBox[
+                    RowBox[{"2", " ", "\[Pi]"}]]}]], "+", 
+                    FractionBox[
+                    RowBox[{"7137", " ", 
+                    RowBox[{"Erf", "[", 
+                    FractionBox["3", 
+                    RowBox[{"95", " ", 
+                    SqrtBox["2"]}]], "]"}]}], "25886"], "+", 
+                    FractionBox[
+                    RowBox[{"7137", " ", 
+                    RowBox[{"Erf", "[", 
+                    FractionBox[
+                    RowBox[{"3", " ", 
+                    SqrtBox["2"]}], "95"], "]"}]}], "25886"], "-", 
+                    FractionBox[
+                    RowBox[{"5866614", " ", "#1"}], "1849"]}], "&"}], ",", 
+                "2.121817834602418292193877960950292891586753074706115827893`\
+30."}], "}"}], "]"}], Short[#, 7]& ], 2.1218178346024184`},
+        "NumericalApproximation"],
+       Root[{
+        Rational[319730463, 46225] + 
+         Rational[-26399763, 46225] 
+          E^(Rational[-119, 50]/#) + (Rational[18225, 245917] 
+           E^Rational[-49, 72200]) (2/Pi)^Rational[1, 2] + (
+           Rational[38637, 11438] E^Rational[-49, 72200]) (2 Pi)^
+           Rational[-1, 2] + 
+         Rational[7137, 25886] Erf[Rational[3, 95] 2^Rational[-1, 2]] + 
+         Rational[7137, 25886] Erf[Rational[3, 95] 2^Rational[1, 2]] + 
+         Rational[-5866614, 1849] #& , 
+         2.121817834602418292193877960950292891586753074706115827893`30.}]]}],
+      ",", 
+     RowBox[{"b", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["7", "10"]}]}], ",", 
+     RowBox[{"c", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["49", "10"]}]}], ",", 
+     RowBox[{"d", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["7", "5"]}]}], ",", 
+     RowBox[{"e", "\[Rule]", 
+      FractionBox["3", "10"]}], ",", 
+     RowBox[{"f", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["9", "5"]}]}], ",", 
+     RowBox[{"x", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["19", "5"]}]}], ",", 
+     RowBox[{"m", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["18", "5"]}]}], ",", 
+     RowBox[{"\[Mu]", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["12", "5"]}]}], ",", 
+     RowBox[{"\[Sigma]", "\[Rule]", "38"}], ",", 
+     RowBox[{"r", "\[Rule]", 
+      FractionBox["33", "10"]}], ",", 
+     RowBox[{"t", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["17", "5"]}]}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", 
+      InterpretationBox[
+       TemplateBox[{"Root", 
+         InterpretationBox[
+          StyleBox[
+           TemplateBox[{"\"1.69\"", 
+             DynamicBox[
+              FEPrivate`FrontEndResource[
+              "FEExpressions", "NumericalApproximationElider"]]}, 
+            "RowDefault"], ShowStringCharacters -> False], 
+          1.69115099482845421263732532679568976164`15.954589770191003, 
+          Editable -> False], 
+         TagBox[
+          RowBox[{"Root", "[", 
+            RowBox[{"{", 
+              RowBox[{
+                RowBox[{
+                  RowBox[{
+                    FractionBox["1547273", "4320"], "-", 
+                    FractionBox[
+                    RowBox[{"221039", " ", 
+                    SuperscriptBox["\[ExponentialE]", 
+                    RowBox[{"-", 
+                    FractionBox["8", 
+                    RowBox[{"5", " ", "#1"}]]}]]}], "4050"], "+", 
+                    FractionBox["1183", 
+                    RowBox[{"80", " ", 
+                    SuperscriptBox["\[ExponentialE]", 
+                    RowBox[{"2809", "/", "45000"}]], " ", 
+                    SqrtBox[
+                    RowBox[{"2", " ", "\[Pi]"}]]}]], "-", 
+                    FractionBox[
+                    RowBox[{"1183", " ", 
+                    RowBox[{"Erf", "[", 
+                    FractionBox["41", 
+                    RowBox[{"150", " ", 
+                    SqrtBox["2"]}]], "]"}]}], "2592"], "+", 
+                    FractionBox[
+                    RowBox[{"1183", " ", 
+                    RowBox[{"Erf", "[", 
+                    FractionBox[
+                    RowBox[{"2", " ", 
+                    SqrtBox["2"]}], "15"], "]"}]}], "2592"], "-", 
+                    FractionBox[
+                    RowBox[{"4199741", " ", "#1"}], "20736"]}], "&"}], ",", 
+                "1.6911509948284542308759762147559027165650354258706648593083`\
+30."}], "}"}], "]"}], Short[#, 7]& ], 1.6911509948284542`},
+        "NumericalApproximation"],
+       Root[{
+        Rational[1547273, 4320] + 
+         Rational[-221039, 4050] 
+          E^(Rational[-8, 5]/#) + (Rational[1183, 80] 
+           E^Rational[-2809, 45000]) (2 Pi)^Rational[-1, 2] + 
+         Rational[-1183, 2592] Erf[Rational[41, 150] 2^Rational[-1, 2]] + 
+         Rational[1183, 2592] Erf[Rational[2, 15] 2^Rational[1, 2]] + 
+         Rational[-4199741, 20736] #& , 
+         1.6911509948284542308759762147559027165650354258706648593083`30.}]]}]\
+, ",", 
+     RowBox[{"b", "\[Rule]", 
+      FractionBox["8", "5"]}], ",", 
+     RowBox[{"c", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["19", "10"]}]}], ",", 
+     RowBox[{"d", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["1", "5"]}]}], ",", 
+     RowBox[{"e", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["13", "10"]}]}], ",", 
+     RowBox[{"f", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["1", "5"]}]}], ",", 
+     RowBox[{"x", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["6", "5"]}]}], ",", 
+     RowBox[{"m", "\[Rule]", 
+      FractionBox["1", "10"]}], ",", 
+     RowBox[{"\[Mu]", "\[Rule]", 
+      FractionBox["41", "10"]}], ",", 
+     RowBox[{"\[Sigma]", "\[Rule]", "15"}], ",", 
+     RowBox[{"r", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["19", "10"]}]}], ",", 
+     RowBox[{"t", "\[Rule]", "1"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", 
+      InterpretationBox[
+       TemplateBox[{"Root", 
+         InterpretationBox[
+          StyleBox[
+           TemplateBox[{"\"-16.1\"", 
+             DynamicBox[
+              FEPrivate`FrontEndResource[
+              "FEExpressions", "NumericalApproximationElider"]]}, 
+            "RowDefault"], ShowStringCharacters -> 
+           False], -16.14830576589568522649642545729875564575`15.\
+954589770191003, Editable -> False], 
+         TagBox[
+          RowBox[{"Root", "[", 
+            RowBox[{"{", 
+              RowBox[{
+                RowBox[{
+                  RowBox[{
+                    FractionBox["66305561", "145350"], "-", 
+                    FractionBox[
+                    RowBox[{"123138899", " ", 
+                    SuperscriptBox["\[ExponentialE]", 
+                    RowBox[{"-", 
+                    FractionBox["221", 
+                    RowBox[{"25", " ", "#1"}]]}]]}], "108300"], "+", 
+                    FractionBox[
+                    RowBox[{"31725", " ", 
+                    SqrtBox[
+                    FractionBox["2", "\[Pi]"]]}], 
+                    RowBox[{"374357", " ", 
+                    SuperscriptBox["\[ExponentialE]", 
+                    RowBox[{"1089", "/", "744200"}]]}]], "+", 
+                    FractionBox["255069", 
+                    RowBox[{"39406", " ", 
+                    SuperscriptBox["\[ExponentialE]", 
+                    RowBox[{"1089", "/", "744200"}]], " ", 
+                    SqrtBox[
+                    RowBox[{"2", " ", "\[Pi]"}]]}]], "+", 
+                    FractionBox[
+                    RowBox[{"184193", " ", 
+                    RowBox[{"Erf", "[", 
+                    FractionBox["3", 
+                    RowBox[{"61", " ", 
+                    SqrtBox["2"]}]], "]"}]}], "220932"], "-", 
+                    FractionBox[
+                    RowBox[{"184193", " ", 
+                    RowBox[{"Erf", "[", 
+                    FractionBox["43", 
+                    RowBox[{"610", " ", 
+                    SqrtBox["2"]}]], "]"}]}], "220932"], "-", 
+                    FractionBox[
+                    RowBox[{"350472251", " ", "#1"}], "3755844"]}], "&"}], 
+                ",", 
+                
+                RowBox[{
+                 "-", "16.14830576589568480108949463892852245769`30."}]}], 
+              "}"}], "]"}], Short[#, 7]& ], -16.148305765895685`},
+        "NumericalApproximation"],
+       Root[{
+        Rational[66305561, 145350] + 
+         Rational[-123138899, 108300] 
+          E^(Rational[-221, 25]/#) + (Rational[31725, 374357] 
+           E^Rational[-1089, 744200]) (2/Pi)^Rational[1, 2] + (
+           Rational[255069, 39406] E^Rational[-1089, 744200]) (2 Pi)^
+           Rational[-1, 2] + 
+         Rational[184193, 220932] Erf[Rational[3, 61] 2^Rational[-1, 2]] + 
+         Rational[-184193, 220932] Erf[Rational[43, 610] 2^Rational[-1, 2]] + 
+         Rational[-350472251, 
+            3755844] #& , -16.14830576589568480108949463892852245769`30.}]]}],
+      ",", 
+     RowBox[{"b", "\[Rule]", 
+      FractionBox["17", "5"]}], ",", 
+     RowBox[{"c", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["37", "10"]}]}], ",", 
+     RowBox[{"d", "\[Rule]", 
+      FractionBox["43", "10"]}], ",", 
+     RowBox[{"e", "\[Rule]", 
+      FractionBox["47", "10"]}], ",", 
+     RowBox[{"f", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["39", "10"]}]}], ",", 
+     RowBox[{"x", "\[Rule]", "1"}], ",", 
+     RowBox[{"m", "\[Rule]", 
+      FractionBox["13", "10"]}], ",", 
+     RowBox[{"\[Mu]", "\[Rule]", 
+      FractionBox["43", "10"]}], ",", 
+     RowBox[{"\[Sigma]", "\[Rule]", 
+      RowBox[{"-", "61"}]}], ",", 
+     RowBox[{"r", "\[Rule]", 
+      FractionBox["47", "10"]}], ",", 
+     RowBox[{"t", "\[Rule]", 
+      FractionBox["13", "5"]}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", 
+      InterpretationBox[
+       TemplateBox[{"Root", 
+         InterpretationBox[
+          StyleBox[
+           TemplateBox[{"\"-77.8\"", 
+             DynamicBox[
+              FEPrivate`FrontEndResource[
+              "FEExpressions", "NumericalApproximationElider"]]}, 
+            "RowDefault"], ShowStringCharacters -> 
+           False], -77.83261223168415199324954301118850708008`15.\
+954589770191003, Editable -> False], 
+         TagBox[
+          RowBox[{"Root", "[", 
+            RowBox[{"{", 
+              RowBox[{
+                RowBox[{
+                  RowBox[{
+                    FractionBox["1909089", "4700"], "-", 
+                    FractionBox[
+                    RowBox[{"1393119", " ", 
+                    SuperscriptBox["\[ExponentialE]", 
+                    RowBox[{"-", 
+                    FractionBox["1739", 
+                    RowBox[{"100", " ", "#1"}]]}]]}], "1600"], "+", 
+                    FractionBox["86751", 
+                    RowBox[{"46624", " ", 
+                    SuperscriptBox["\[ExponentialE]", 
+                    RowBox[{"2", "/", "24025"}]], " ", 
+                    SqrtBox[
+                    RowBox[{"2", " ", "\[Pi]"}]]}]], "-", 
+                    FractionBox[
+                    RowBox[{"357", " ", 
+                    RowBox[{"Erf", "[", 
+                    FractionBox["11", 
+                    RowBox[{"310", " ", 
+                    SqrtBox["2"]}]], "]"}]}], "1504"], "+", 
+                    FractionBox[
+                    RowBox[{"357", " ", 
+                    RowBox[{"Erf", "[", 
+                    FractionBox["49", 
+                    RowBox[{"620", " ", 
+                    SqrtBox["2"]}]], "]"}]}], "1504"], "-", 
+                    FractionBox[
+                    RowBox[{"154791", " ", "#1"}], "17672"]}], "&"}], ",", 
+                
+                RowBox[{
+                 "-", "77.83261223168414986059304367490373462077`30."}]}], 
+              "}"}], "]"}], Short[#, 7]& ], -77.83261223168415},
+        "NumericalApproximation"],
+       Root[{
+        Rational[1909089, 4700] + 
+         Rational[-1393119, 1600] 
+          E^(Rational[-1739, 100]/#) + (Rational[86751, 46624] 
+           E^Rational[-2, 24025]) (2 Pi)^Rational[-1, 2] + 
+         Rational[-357, 1504] Erf[Rational[11, 310] 2^Rational[-1, 2]] + 
+         Rational[357, 1504] Erf[Rational[49, 620] 2^Rational[-1, 2]] + 
+         Rational[-154791, 
+            17672] #& , -77.83261223168414986059304367490373462077`30.}]]}], 
+     ",", 
+     RowBox[{"b", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["47", "10"]}]}], ",", 
+     RowBox[{"c", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["3", "5"]}]}], ",", 
+     RowBox[{"d", "\[Rule]", 
+      FractionBox["37", "10"]}], ",", 
+     RowBox[{"e", "\[Rule]", 
+      FractionBox["17", "10"]}], ",", 
+     RowBox[{"f", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["27", "10"]}]}], ",", 
+     RowBox[{"x", "\[Rule]", 
+      FractionBox["7", "5"]}], ",", 
+     RowBox[{"m", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["27", "10"]}]}], ",", 
+     RowBox[{"\[Mu]", "\[Rule]", 
+      FractionBox["11", "5"]}], ",", 
+     RowBox[{"\[Sigma]", "\[Rule]", "62"}], ",", 
+     RowBox[{"r", "\[Rule]", "3"}], ",", 
+     RowBox[{"t", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["37", "10"]}]}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", 
+      InterpretationBox[
+       TemplateBox[{"Root", 
+         InterpretationBox[
+          StyleBox[
+           TemplateBox[{"\"43.5\"", 
+             DynamicBox[
+              FEPrivate`FrontEndResource[
+              "FEExpressions", "NumericalApproximationElider"]]}, 
+            "RowDefault"], ShowStringCharacters -> False], 
+          43.50259876291617899823904735967516899109`15.954589770191003, 
+          Editable -> False], 
+         TagBox[
+          RowBox[{"Root", "[", 
+            RowBox[{"{", 
+              RowBox[{
+                RowBox[{
+                  RowBox[{
+                    FractionBox["4664296", "62775"], "-", 
+                    FractionBox[
+                    RowBox[{"10328084", " ", 
+                    SuperscriptBox["\[ExponentialE]", 
+                    FractionBox["31", 
+                    RowBox[{"100", " ", "#1"}]]]}], "18225"], "+", 
+                    FractionBox[
+                    RowBox[{"17", " ", 
+                    SqrtBox[
+                    FractionBox["2", "\[Pi]"]]}], 
+                    RowBox[{"651", " ", 
+                    SuperscriptBox["\[ExponentialE]", 
+                    RowBox[{"8", "/", "1225"}]]}]], "-", 
+                    FractionBox["243", 
+                    RowBox[{"1085", " ", 
+                    SuperscriptBox["\[ExponentialE]", 
+                    RowBox[{"8", "/", "1225"}]], " ", 
+                    SqrtBox[
+                    RowBox[{"2", " ", "\[Pi]"}]]}]], "+", 
+                    FractionBox[
+                    RowBox[{"559", " ", 
+                    RowBox[{"Erf", "[", 
+                    FractionBox["1", 
+                    RowBox[{"70", " ", 
+                    SqrtBox["2"]}]], "]"}]}], "22599"], "+", 
+                    FractionBox[
+                    RowBox[{"559", " ", 
+                    RowBox[{"Erf", "[", 
+                    FractionBox["9", 
+                    RowBox[{"175", " ", 
+                    SqrtBox["2"]}]], "]"}]}], "22599"], "+", 
+                    FractionBox[
+                    RowBox[{"2665312", " ", "#1"}], "233523"]}], "&"}], ",", 
+                "43.50259876291618034157860774609221443763`30."}], "}"}], 
+            "]"}], Short[#, 7]& ], 43.50259876291618},
+        "NumericalApproximation"],
+       Root[{
+        Rational[4664296, 62775] + 
+         Rational[-10328084, 18225] 
+          E^(Rational[31, 100]/#) + (Rational[17, 651] 
+           E^Rational[-8, 1225]) (2/Pi)^Rational[1, 2] + (
+           Rational[-243, 1085] E^Rational[-8, 1225]) (2 Pi)^Rational[-1, 2] + 
+         Rational[559, 22599] Erf[Rational[1, 70] 2^Rational[-1, 2]] + 
+         Rational[559, 22599] Erf[Rational[9, 175] 2^Rational[-1, 2]] + 
+         Rational[2665312, 233523] #& , 
+         43.50259876291618034157860774609221443763`30.}]]}], ",", 
+     RowBox[{"b", "\[Rule]", 
+      FractionBox["31", "10"]}], ",", 
+     RowBox[{"c", "\[Rule]", 
+      FractionBox["3", "5"]}], ",", 
+     RowBox[{"d", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["6", "5"]}]}], ",", 
+     RowBox[{"e", "\[Rule]", 
+      FractionBox["1", "5"]}], ",", 
+     RowBox[{"f", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["31", "10"]}]}], ",", 
+     RowBox[{"x", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["22", "5"]}]}], ",", 
+     RowBox[{"m", "\[Rule]", 
+      FractionBox["23", "5"]}], ",", 
+     RowBox[{"\[Mu]", "\[Rule]", 
+      FractionBox["18", "5"]}], ",", 
+     RowBox[{"\[Sigma]", "\[Rule]", "70"}], ",", 
+     RowBox[{"r", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["37", "10"]}]}], ",", 
+     RowBox[{"t", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["1", "10"]}]}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", 
+      InterpretationBox[
+       TemplateBox[{"Root", 
+         InterpretationBox[
+          StyleBox[
+           TemplateBox[{"\"-12.0\"", 
+             DynamicBox[
+              FEPrivate`FrontEndResource[
+              "FEExpressions", "NumericalApproximationElider"]]}, 
+            "RowDefault"], ShowStringCharacters -> 
+           False], -12.00501946399505825979758810717612504959`15.\
+954589770191003, Editable -> False], 
+         TagBox[
+          RowBox[{"Root", "[", 
+            RowBox[{"{", 
+              RowBox[{
+                RowBox[{
+                  RowBox[{
+                    RowBox[{"-", 
+                    FractionBox["141642", "1183"]}], "+", 
+                    RowBox[{
+                    FractionBox["157380", "169"], " ", 
+                    SuperscriptBox["\[ExponentialE]", 
+                    RowBox[{"-", 
+                    FractionBox["21", 
+                    RowBox[{"5", " ", "#1"}]]}]]}], "-", 
+                    FractionBox["177633", 
+                    RowBox[{"18928", " ", 
+                    SuperscriptBox["\[ExponentialE]", 
+                    RowBox[{"1", "/", "12800"}]], " ", 
+                    SqrtBox[
+                    RowBox[{"2", " ", "\[Pi]"}]]}]], "+", 
+                    FractionBox[
+                    RowBox[{"2193", " ", 
+                    RowBox[{"Erf", "[", 
+                    FractionBox["17", 
+                    RowBox[{"120", " ", 
+                    SqrtBox["2"]}]], "]"}]}], "4732"], "-", 
+                    FractionBox[
+                    RowBox[{"2193", " ", 
+                    RowBox[{"Erf", "[", 
+                    FractionBox["11", 
+                    RowBox[{"60", " ", 
+                    SqrtBox["2"]}]], "]"}]}], "4732"], "+", 
+                    FractionBox[
+                    RowBox[{"118035", " ", "#1"}], "1183"]}], "&"}], ",", 
+                
+                RowBox[{
+                 "-", "12.\
+0050194639950581751551247311806863303339312893691913000101`30."}]}], "}"}], 
+            "]"}], Short[#, 7]& ], -12.005019463995058`},
+        "NumericalApproximation"],
+       Root[{
+        Rational[-141642, 1183] + 
+         Rational[157380, 169] 
+          E^(Rational[-21, 5]/#) + (Rational[-177633, 18928] 
+           E^Rational[-1, 12800]) (2 Pi)^Rational[-1, 2] + 
+         Rational[2193, 4732] Erf[Rational[17, 120] 2^Rational[-1, 2]] + 
+         Rational[-2193, 4732] Erf[Rational[11, 60] 2^Rational[-1, 2]] + 
+         Rational[
+           118035, 1183] #& , \
+-12.0050194639950581751551247311806863303339312893691913000101`30.}]]}], ",", 
+     RowBox[{"b", "\[Rule]", 
+      FractionBox["14", "5"]}], ",", 
+     RowBox[{"c", "\[Rule]", 
+      FractionBox["21", "5"]}], ",", 
+     RowBox[{"d", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["9", "2"]}]}], ",", 
+     RowBox[{"e", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["17", "5"]}]}], ",", 
+     RowBox[{"f", "\[Rule]", "5"}], ",", 
+     RowBox[{"x", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["41", "10"]}]}], ",", 
+     RowBox[{"m", "\[Rule]", 
+      RowBox[{"-", "1"}]}], ",", 
+     RowBox[{"\[Mu]", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["22", "5"]}]}], ",", 
+     RowBox[{"\[Sigma]", "\[Rule]", 
+      RowBox[{"-", "24"}]}], ",", 
+     RowBox[{"r", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["18", "5"]}]}], ",", 
+     RowBox[{"t", "\[Rule]", 
+      FractionBox["3", "2"]}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", 
+      InterpretationBox[
+       TemplateBox[{"Root", 
+         InterpretationBox[
+          StyleBox[
+           TemplateBox[{"\"7.32\"", 
+             DynamicBox[
+              FEPrivate`FrontEndResource[
+              "FEExpressions", "NumericalApproximationElider"]]}, 
+            "RowDefault"], ShowStringCharacters -> False], 
+          7.31563740156404129777456546435132622719`15.954589770191003, 
+          Editable -> False], 
+         TagBox[
+          RowBox[{"Root", "[", 
+            RowBox[{"{", 
+              RowBox[{
+                RowBox[{
+                  RowBox[{
+                    RowBox[{"-", 
+                    FractionBox["25203", "2"]}], "+", 
+                    RowBox[{
+                    FractionBox["75609", "100"], " ", 
+                    SuperscriptBox["\[ExponentialE]", 
+                    RowBox[{"-", 
+                    FractionBox["819", 
+                    RowBox[{"100", " ", "#1"}]]}]]}], "-", 
+                    FractionBox["62775", 
+                    RowBox[{"133", " ", 
+                    SuperscriptBox["\[ExponentialE]", 
+                    RowBox[{"1681", "/", "288800"}]], " ", 
+                    SqrtBox[
+                    RowBox[{"2", " ", "\[Pi]"}]]}]], "+", 
+                    RowBox[{
+                    FractionBox["775", "21"], " ", 
+                    RowBox[{"Erf", "[", 
+                    FractionBox["9", 
+                    RowBox[{"190", " ", 
+                    SqrtBox["2"]}]], "]"}]}], "-", 
+                    RowBox[{
+                    FractionBox["775", "21"], " ", 
+                    RowBox[{"Erf", "[", 
+                    FractionBox["27", 
+                    RowBox[{"380", " ", 
+                    SqrtBox["2"]}]], "]"}]}], "+", 
+                    FractionBox[
+                    RowBox[{"84010", " ", "#1"}], "49"]}], "&"}], ",", 
+                "7.3156374015640409158717040356133963620134970251356475609772`\
+30."}], "}"}], "]"}], Short[#, 7]& ], 7.315637401564041},
+        "NumericalApproximation"],
+       Root[{
+        Rational[-25203, 2] + 
+         Rational[75609, 100] 
+          E^(Rational[-819, 100]/#) + (Rational[-62775, 133] 
+           E^Rational[-1681, 288800]) (2 Pi)^Rational[-1, 2] + 
+         Rational[775, 21] Erf[Rational[9, 190] 2^Rational[-1, 2]] + 
+         Rational[-775, 21] Erf[Rational[27, 380] 2^Rational[-1, 2]] + 
+         Rational[84010, 49] #& , 
+         7.3156374015640409158717040356133963620134970251356475609772`30.}]]}]\
+, ",", 
+     RowBox[{"b", "\[Rule]", 
+      FractionBox["21", "10"]}], ",", 
+     RowBox[{"c", "\[Rule]", "1"}], ",", 
+     RowBox[{"d", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["2", "5"]}]}], ",", 
+     RowBox[{"e", "\[Rule]", 
+      RowBox[{"-", "5"}]}], ",", 
+     RowBox[{"f", "\[Rule]", 
+      FractionBox["1", "10"]}], ",", 
+     RowBox[{"x", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["23", "10"]}]}], ",", 
+     RowBox[{"m", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["9", "10"]}]}], ",", 
+     RowBox[{"\[Mu]", "\[Rule]", 
+      FractionBox["9", "5"]}], ",", 
+     RowBox[{"\[Sigma]", "\[Rule]", 
+      RowBox[{"-", "38"}]}], ",", 
+     RowBox[{"r", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["4", "5"]}]}], ",", 
+     RowBox[{"t", "\[Rule]", 
+      FractionBox["39", "10"]}]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.8561745768488455`*^9, 3.8562347305093875`*^9, 
+  3.8564382287981157`*^9},
+ CellLabel->
+  "Out[105]=",ExpressionUUID->"e405e290-be8c-4a7c-b3de-93044585e321"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"FindInstance", "[", 
+  RowBox[{
+   RowBox[{
+    FractionBox[
+     RowBox[{"W", "[", 
+      RowBox[{"t", "+", "1"}], "]"}], 
+     RowBox[{"W", "[", "t", "]"}]], "\[Equal]", 
+    RowBox[{"1", "+", "r", "+", "w"}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"r", ",", "w"}], "}"}], ",", "Reals"}], "]"}]], "Input",
+ CellChangeTimes->{{3.8556084182183456`*^9, 3.8556084368270645`*^9}, {
+  3.855623174045982*^9, 3.855623187482995*^9}, {3.8556235291866913`*^9, 
+  3.855623541030045*^9}},
+ CellLabel->"In[7]:=",ExpressionUUID->"da1ca453-4006-413a-b2c6-003351e38c6b"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"n", "=", "729"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"W", "[", "t_", "]"}], ":=", 
+   RowBox[{
+    FractionBox[
+     RowBox[{
+      RowBox[{
+       RowBox[{"-", "b"}], " ", "e", " ", 
+       RowBox[{"Exp", "[", 
+        RowBox[{"-", 
+         FractionBox[
+          SuperscriptBox[
+           RowBox[{"(", 
+            RowBox[{"x", "-", "\[Mu]"}], ")"}], "2"], 
+          RowBox[{"2", " ", 
+           SuperscriptBox["\[Sigma]", "2"]}]]}], "]"}], " ", 
+       SqrtBox[
+        FractionBox["2", "\[Pi]"]]}], "+", 
+      RowBox[{"2", " ", "a", " ", "c", " ", "\[Sigma]"}], "-", 
+      RowBox[{"2", " ", "b", " ", 
+       RowBox[{"(", 
+        RowBox[{"d", "+", 
+         RowBox[{"c", " ", "t"}]}], ")"}], " ", "\[Sigma]"}]}], 
+     RowBox[{"2", " ", 
+      SuperscriptBox["b", "2"], " ", "\[Sigma]"}]], "+", 
+    RowBox[{
+     RowBox[{"Exp", "[", 
+      RowBox[{"-", 
+       FractionBox[
+        RowBox[{"b", " ", "t"}], "a"]}], "]"}], " ", "f"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"sols", "=", 
+   RowBox[{"FindInstance", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"n", " ", 
+       RowBox[{"W", "[", "t", "]"}]}], "\[Equal]", 
+      RowBox[{"Evaluate", "[", 
+       RowBox[{
+        SubsuperscriptBox["\[Integral]", "0", "T"], 
+        RowBox[{
+         SubsuperscriptBox["\[Integral]", "0", "m"], 
+         RowBox[{
+          RowBox[{"W", "[", "t", "]"}], 
+          RowBox[{"\[DifferentialD]", "x"}], 
+          RowBox[{"\[DifferentialD]", "t"}]}]}]}], "]"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+      "a", ",", "b", ",", "c", ",", "d", ",", "e", ",", "f", ",", "x", ",", 
+       "m", ",", "\[Mu]", ",", "\[Sigma]", ",", "t", ",", "T"}], "}"}], ",", 
+     "Reals", ",", "7"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Sort", "[", "sols", "]"}]}], "Input",
+ CellChangeTimes->{{3.856234682464117*^9, 3.8562346918700743`*^9}, 
+   3.8562347293844185`*^9, {3.8562347598521585`*^9, 3.8562347838044868`*^9}, {
+   3.8562350686855946`*^9, 3.8562350789352517`*^9}},
+ CellLabel->
+  "In[106]:=",ExpressionUUID->"530693a9-3cce-40fa-92cb-8f65186e023d"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", 
+      InterpretationBox[
+       TemplateBox[{"Root", 
+         InterpretationBox[
+          StyleBox[
+           TemplateBox[{"\"-64.9\"", 
+             DynamicBox[
+              FEPrivate`FrontEndResource[
+              "FEExpressions", "NumericalApproximationElider"]]}, 
+            "RowDefault"], ShowStringCharacters -> 
+           False], -64.85687374815479699918796541169285774231`15.\
+954589770191003, Editable -> False], 
+         TagBox[
+          RowBox[{"Root", "[", 
+            RowBox[{"{", 
+              RowBox[{
+                RowBox[{
+                  RowBox[{
+                    FractionBox["13370481", "47000"], "-", 
+                    RowBox[{
+                    FractionBox["19683", "10"], " ", 
+                    SuperscriptBox["\[ExponentialE]", 
+                    FractionBox["141", 
+                    RowBox[{"10", " ", "#1"}]]]}], "+", 
+                    FractionBox["12393", 
+                    RowBox[{"2914", " ", 
+                    SuperscriptBox["\[ExponentialE]", 
+                    RowBox[{"2", "/", "24025"}]], " ", 
+                    SqrtBox[
+                    RowBox[{"2", " ", "\[Pi]"}]]}]], "+", 
+                    RowBox[{
+                    FractionBox["629", "940"], " ", 
+                    RowBox[{"Erf", "[", 
+                    FractionBox["11", 
+                    RowBox[{"310", " ", 
+                    SqrtBox["2"]}]], "]"}]}], "-", 
+                    RowBox[{
+                    FractionBox["629", "940"], " ", 
+                    RowBox[{"Erf", "[", 
+                    FractionBox["49", 
+                    RowBox[{"620", " ", 
+                    SqrtBox["2"]}]], "]"}]}], "-", 
+                    FractionBox[
+                    RowBox[{"397143", " ", "#1"}], "22090"], "-", 
+                    RowBox[{
+                    FractionBox["729", "470"], " ", 
+                    SuperscriptBox["\[ExponentialE]", 
+                    RowBox[{"-", 
+                    FractionBox["1739", 
+                    RowBox[{"100", " ", "#1"}]]}]], " ", "#1"}]}], "&"}], ",", 
+                
+                RowBox[{
+                 "-", "64.85687374815480116415602736994673480053`30."}]}], 
+              "}"}], "]"}], Short[#, 7]& ], -64.8568737481548},
+        "NumericalApproximation"],
+       Root[{
+        Rational[13370481, 47000] + 
+         Rational[-19683, 10] 
+          E^(Rational[141, 10]/#) + (Rational[12393, 2914] 
+           E^Rational[-2, 24025]) (2 Pi)^Rational[-1, 2] + 
+         Rational[629, 940] Erf[Rational[11, 310] 2^Rational[-1, 2]] + 
+         Rational[-629, 940] Erf[Rational[49, 620] 2^Rational[-1, 2]] + 
+         Rational[-397143, 22090] # + (Rational[-729, 470] 
+           E^(Rational[-1739, 
+               100]/#)) #& , \
+-64.85687374815480116415602736994673480053`30.}]]}], ",", 
+     RowBox[{"b", "\[Rule]", 
+      RowBox[{"-", 
+       RowBox[{"(", 
+        RowBox[{"47", "/", "10"}], ")"}]}]}], ",", 
+     RowBox[{"c", "\[Rule]", 
+      RowBox[{"-", 
+       RowBox[{"(", 
+        RowBox[{"3", "/", "5"}], ")"}]}]}], ",", 
+     RowBox[{"d", "\[Rule]", 
+      RowBox[{"37", "/", "10"}]}], ",", 
+     RowBox[{"e", "\[Rule]", 
+      RowBox[{"17", "/", "10"}]}], ",", 
+     RowBox[{"f", "\[Rule]", 
+      RowBox[{"-", 
+       RowBox[{"(", 
+        RowBox[{"27", "/", "10"}], ")"}]}]}], ",", 
+     RowBox[{"x", "\[Rule]", 
+      RowBox[{"7", "/", "5"}]}], ",", 
+     RowBox[{"m", "\[Rule]", 
+      RowBox[{"-", 
+       RowBox[{"(", 
+        RowBox[{"27", "/", "10"}], ")"}]}]}], ",", 
+     RowBox[{"\[Mu]", "\[Rule]", 
+      RowBox[{"11", "/", "5"}]}], ",", 
+     RowBox[{"\[Sigma]", "\[Rule]", "62"}], ",", 
+     RowBox[{"t", "\[Rule]", "3"}], ",", 
+     RowBox[{"T", "\[Rule]", 
+      RowBox[{"-", 
+       RowBox[{"(", 
+        RowBox[{"37", "/", "10"}], ")"}]}]}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", 
+      InterpretationBox[
+       TemplateBox[{"Root", 
+         InterpretationBox[
+          StyleBox[
+           TemplateBox[{"\"-17.8\"", 
+             DynamicBox[
+              FEPrivate`FrontEndResource[
+              "FEExpressions", "NumericalApproximationElider"]]}, 
+            "RowDefault"], ShowStringCharacters -> 
+           False], -17.82299307464040794002357870340347290039`15.\
+954589770191003, Editable -> False], 
+         TagBox[
+          RowBox[{"Root", "[", 
+            RowBox[{"{", 
+              RowBox[{
+                RowBox[{
+                  RowBox[{
+                    FractionBox["2806143", "1000"], "-", 
+                    RowBox[{
+                    FractionBox["28431", "10"], " ", 
+                    SuperscriptBox["\[ExponentialE]", 
+                    RowBox[{"-", 
+                    FractionBox["799", 
+                    RowBox[{"50", " ", "#1"}]]}]]}], "+", 
+                    FractionBox["34263", 
+                    RowBox[{"2074", " ", 
+                    SuperscriptBox["\[ExponentialE]", 
+                    RowBox[{"1089", "/", "744200"}]], " ", 
+                    SqrtBox[
+                    RowBox[{"2", " ", "\[Pi]"}]]}]], "+", 
+                    RowBox[{
+                    FractionBox["611", "340"], " ", 
+                    RowBox[{"Erf", "[", 
+                    FractionBox["3", 
+                    RowBox[{"61", " ", 
+                    SqrtBox["2"]}]], "]"}]}], "-", 
+                    RowBox[{
+                    FractionBox["611", "340"], " ", 
+                    RowBox[{"Erf", "[", 
+                    FractionBox["43", 
+                    RowBox[{"610", " ", 
+                    SqrtBox["2"]}]], "]"}]}], "-", 
+                    FractionBox[
+                    RowBox[{"666889", " ", "#1"}], "2890"], "-", 
+                    RowBox[{
+                    FractionBox["507", "340"], " ", 
+                    SuperscriptBox["\[ExponentialE]", 
+                    RowBox[{"-", 
+                    FractionBox["221", 
+                    RowBox[{"25", " ", "#1"}]]}]], " ", "#1"}]}], "&"}], ",", 
+                
+                RowBox[{
+                 "-", "17.82299307464040685243938245184176317742`30."}]}], 
+              "}"}], "]"}], Short[#, 7]& ], -17.822993074640408`},
+        "NumericalApproximation"],
+       Root[{
+        Rational[2806143, 1000] + 
+         Rational[-28431, 10] 
+          E^(Rational[-799, 50]/#) + (Rational[34263, 2074] 
+           E^Rational[-1089, 744200]) (2 Pi)^Rational[-1, 2] + 
+         Rational[611, 340] Erf[Rational[3, 61] 2^Rational[-1, 2]] + 
+         Rational[-611, 340] Erf[Rational[43, 610] 2^Rational[-1, 2]] + 
+         Rational[-666889, 2890] # + (Rational[-507, 340] 
+           E^(Rational[-221, 
+               25]/#)) #& , \
+-17.82299307464040685243938245184176317742`30.}]]}], ",", 
+     RowBox[{"b", "\[Rule]", 
+      RowBox[{"17", "/", "5"}]}], ",", 
+     RowBox[{"c", "\[Rule]", 
+      RowBox[{"-", 
+       RowBox[{"(", 
+        RowBox[{"37", "/", "10"}], ")"}]}]}], ",", 
+     RowBox[{"d", "\[Rule]", 
+      RowBox[{"43", "/", "10"}]}], ",", 
+     RowBox[{"e", "\[Rule]", 
+      RowBox[{"47", "/", "10"}]}], ",", 
+     RowBox[{"f", "\[Rule]", 
+      RowBox[{"-", 
+       RowBox[{"(", 
+        RowBox[{"39", "/", "10"}], ")"}]}]}], ",", 
+     RowBox[{"x", "\[Rule]", "1"}], ",", 
+     RowBox[{"m", "\[Rule]", 
+      RowBox[{"13", "/", "10"}]}], ",", 
+     RowBox[{"\[Mu]", "\[Rule]", 
+      RowBox[{"43", "/", "10"}]}], ",", 
+     RowBox[{"\[Sigma]", "\[Rule]", 
+      RowBox[{"-", "61"}]}], ",", 
+     RowBox[{"t", "\[Rule]", 
+      RowBox[{"47", "/", "10"}]}], ",", 
+     RowBox[{"T", "\[Rule]", 
+      RowBox[{"13", "/", "5"}]}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", 
+      InterpretationBox[
+       TemplateBox[{"Root", 
+         InterpretationBox[
+          StyleBox[
+           TemplateBox[{"\"-2.63\"", 
+             DynamicBox[
+              FEPrivate`FrontEndResource[
+              "FEExpressions", "NumericalApproximationElider"]]}, 
+            "RowDefault"], ShowStringCharacters -> 
+           False], -2.62898849643968990363873672322370111942`15.\
+954589770191003, Editable -> False], 
+         TagBox[
+          RowBox[{"Root", "[", 
+            RowBox[{"{", 
+              RowBox[{
+                RowBox[{
+                  RowBox[{
+                    FractionBox["579573", "1400"], "+", 
+                    RowBox[{
+                    FractionBox["729", "10"], " ", 
+                    SuperscriptBox["\[ExponentialE]", 
+                    FractionBox["42", 
+                    RowBox[{"25", " ", "#1"}]]]}], "-", 
+                    FractionBox["6075", 
+                    RowBox[{"133", " ", 
+                    SuperscriptBox["\[ExponentialE]", 
+                    RowBox[{"1681", "/", "288800"}]], " ", 
+                    SqrtBox[
+                    RowBox[{"2", " ", "\[Pi]"}]]}]], "+", 
+                    RowBox[{
+                    FractionBox["65", "14"], " ", 
+                    RowBox[{"Erf", "[", 
+                    FractionBox["9", 
+                    RowBox[{"190", " ", 
+                    SqrtBox["2"]}]], "]"}]}], "-", 
+                    RowBox[{
+                    FractionBox["65", "14"], " ", 
+                    RowBox[{"Erf", "[", 
+                    FractionBox["27", 
+                    RowBox[{"380", " ", 
+                    SqrtBox["2"]}]], "]"}]}], "+", 
+                    FractionBox[
+                    RowBox[{"81411", " ", "#1"}], "490"], "-", 
+                    RowBox[{
+                    FractionBox["3", "70"], " ", 
+                    SuperscriptBox["\[ExponentialE]", 
+                    RowBox[{"-", 
+                    FractionBox["819", 
+                    RowBox[{"100", " ", "#1"}]]}]], " ", "#1"}]}], "&"}], ",", 
+                
+                RowBox[{
+                 "-", "2.\
+628988496439689823786196298923190063464388436397277428657`30."}]}], "}"}], 
+            "]"}], Short[#, 7]& ], -2.62898849643969},
+        "NumericalApproximation"],
+       Root[{
+        Rational[579573, 1400] + 
+         Rational[729, 10] 
+          E^(Rational[42, 25]/#) + (Rational[-6075, 133] 
+           E^Rational[-1681, 288800]) (2 Pi)^Rational[-1, 2] + 
+         Rational[65, 14] Erf[Rational[9, 190] 2^Rational[-1, 2]] + 
+         Rational[-65, 14] Erf[Rational[27, 380] 2^Rational[-1, 2]] + 
+         Rational[81411, 490] # + (Rational[-3, 70] 
+           E^(Rational[-819, 
+               100]/#)) #& , \
+-2.628988496439689823786196298923190063464388436397277428657`30.}]]}], ",", 
+     RowBox[{"b", "\[Rule]", 
+      RowBox[{"21", "/", "10"}]}], ",", 
+     RowBox[{"c", "\[Rule]", "1"}], ",", 
+     RowBox[{"d", "\[Rule]", 
+      RowBox[{"-", 
+       RowBox[{"(", 
+        RowBox[{"2", "/", "5"}], ")"}]}]}], ",", 
+     RowBox[{"e", "\[Rule]", 
+      RowBox[{"-", "5"}]}], ",", 
+     RowBox[{"f", "\[Rule]", 
+      RowBox[{"1", "/", "10"}]}], ",", 
+     RowBox[{"x", "\[Rule]", 
+      RowBox[{"-", 
+       RowBox[{"(", 
+        RowBox[{"23", "/", "10"}], ")"}]}]}], ",", 
+     RowBox[{"m", "\[Rule]", 
+      RowBox[{"-", 
+       RowBox[{"(", 
+        RowBox[{"9", "/", "10"}], ")"}]}]}], ",", 
+     RowBox[{"\[Mu]", "\[Rule]", 
+      RowBox[{"9", "/", "5"}]}], ",", 
+     RowBox[{"\[Sigma]", "\[Rule]", 
+      RowBox[{"-", "38"}]}], ",", 
+     RowBox[{"t", "\[Rule]", 
+      RowBox[{"-", 
+       RowBox[{"(", 
+        RowBox[{"4", "/", "5"}], ")"}]}]}], ",", 
+     RowBox[{"T", "\[Rule]", 
+      RowBox[{"39", "/", "10"}]}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", 
+      InterpretationBox[
+       TemplateBox[{"Root", 
+         InterpretationBox[
+          StyleBox[
+           TemplateBox[{"\"-18.4\"", 
+             DynamicBox[
+              FEPrivate`FrontEndResource[
+              "FEExpressions", "NumericalApproximationElider"]]}, 
+            "RowDefault"], ShowStringCharacters -> 
+           False], -18.42898530008162794047166244126856327057`15.\
+954589770191003, Editable -> False], 
+         TagBox[
+          RowBox[{"Root", "[", 
+            RowBox[{"{", 
+              RowBox[{
+                RowBox[{
+                  RowBox[{
+                    FractionBox["2861001", "560"], "+", 
+                    RowBox[{"3645", " ", 
+                    SuperscriptBox["\[ExponentialE]", 
+                    FractionBox["252", 
+                    RowBox[{"25", " ", "#1"}]]]}], "-", 
+                    FractionBox["4131", 
+                    RowBox[{"112", " ", 
+                    SuperscriptBox["\[ExponentialE]", 
+                    RowBox[{"1", "/", "12800"}]], " ", 
+                    SqrtBox[
+                    RowBox[{"2", " ", "\[Pi]"}]]}]], "+", 
+                    RowBox[{
+                    FractionBox["51", "56"], " ", 
+                    RowBox[{"Erf", "[", 
+                    FractionBox["17", 
+                    RowBox[{"120", " ", 
+                    SqrtBox["2"]}]], "]"}]}], "-", 
+                    RowBox[{
+                    FractionBox["51", "56"], " ", 
+                    RowBox[{"Erf", "[", 
+                    FractionBox["11", 
+                    RowBox[{"60", " ", 
+                    SqrtBox["2"]}]], "]"}]}], "+", 
+                    FractionBox[
+                    RowBox[{"3145", " ", "#1"}], "8"], "-", 
+                    RowBox[{
+                    FractionBox["25", "14"], " ", 
+                    SuperscriptBox["\[ExponentialE]", 
+                    RowBox[{"-", 
+                    FractionBox["21", 
+                    RowBox[{"5", " ", "#1"}]]}]], " ", "#1"}]}], "&"}], ",", 
+                
+                RowBox[{
+                 "-", "18.42898530008162620354086518243457998124`30."}]}], 
+              "}"}], "]"}], Short[#, 7]& ], -18.428985300081628`},
+        "NumericalApproximation"],
+       Root[{
+        Rational[2861001, 560] + 
+         3645 E^(Rational[252, 25]/#) + (Rational[-4131, 112] 
+           E^Rational[-1, 12800]) (2 Pi)^Rational[-1, 2] + 
+         Rational[51, 56] Erf[Rational[17, 120] 2^Rational[-1, 2]] + 
+         Rational[-51, 56] Erf[Rational[11, 60] 2^Rational[-1, 2]] + 
+         Rational[3145, 8] # + (Rational[-25, 14] 
+           E^(Rational[-21, 
+               5]/#)) #& , \
+-18.42898530008162620354086518243457998124`30.}]]}], ",", 
+     RowBox[{"b", "\[Rule]", 
+      RowBox[{"14", "/", "5"}]}], ",", 
+     RowBox[{"c", "\[Rule]", 
+      RowBox[{"21", "/", "5"}]}], ",", 
+     RowBox[{"d", "\[Rule]", 
+      RowBox[{"-", 
+       RowBox[{"(", 
+        RowBox[{"9", "/", "2"}], ")"}]}]}], ",", 
+     RowBox[{"e", "\[Rule]", 
+      RowBox[{"-", 
+       RowBox[{"(", 
+        RowBox[{"17", "/", "5"}], ")"}]}]}], ",", 
+     RowBox[{"f", "\[Rule]", "5"}], ",", 
+     RowBox[{"x", "\[Rule]", 
+      RowBox[{"-", 
+       RowBox[{"(", 
+        RowBox[{"41", "/", "10"}], ")"}]}]}], ",", 
+     RowBox[{"m", "\[Rule]", 
+      RowBox[{"-", "1"}]}], ",", 
+     RowBox[{"\[Mu]", "\[Rule]", 
+      RowBox[{"-", 
+       RowBox[{"(", 
+        RowBox[{"22", "/", "5"}], ")"}]}]}], ",", 
+     RowBox[{"\[Sigma]", "\[Rule]", 
+      RowBox[{"-", "24"}]}], ",", 
+     RowBox[{"t", "\[Rule]", 
+      RowBox[{"-", 
+       RowBox[{"(", 
+        RowBox[{"18", "/", "5"}], ")"}]}]}], ",", 
+     RowBox[{"T", "\[Rule]", 
+      RowBox[{"3", "/", "2"}]}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", 
+      InterpretationBox[
+       TemplateBox[{"Root", 
+         InterpretationBox[
+          StyleBox[
+           TemplateBox[{"\"-2.64\"", 
+             DynamicBox[
+              FEPrivate`FrontEndResource[
+              "FEExpressions", "NumericalApproximationElider"]]}, 
+            "RowDefault"], ShowStringCharacters -> 
+           False], -2.64066387728442730775668678688816726208`15.\
+954589770191003, Editable -> False], 
+         TagBox[
+          RowBox[{"Root", "[", 
+            RowBox[{"{", 
+              RowBox[{
+                RowBox[{
+                  RowBox[{
+                    RowBox[{"-", 
+                    FractionBox["4604769", "250"]}], "-", 
+                    RowBox[{
+                    FractionBox["6561", "5"], " ", 
+                    SuperscriptBox["\[ExponentialE]", 
+                    FractionBox["231", 
+                    RowBox[{"100", " ", "#1"}]]]}], "+", 
+                    FractionBox["2187", 
+                    RowBox[{"266", " ", 
+                    SuperscriptBox["\[ExponentialE]", 
+                    RowBox[{"49", "/", "72200"}]], " ", 
+                    SqrtBox[
+                    RowBox[{"2", " ", "\[Pi]"}]]}]], "-", 
+                    RowBox[{
+                    FractionBox["51", "70"], " ", 
+                    RowBox[{"Erf", "[", 
+                    FractionBox["3", 
+                    RowBox[{"95", " ", 
+                    SqrtBox["2"]}]], "]"}]}], "-", 
+                    RowBox[{
+                    FractionBox["51", "70"], " ", 
+                    RowBox[{"Erf", "[", 
+                    FractionBox[
+                    RowBox[{"3", " ", 
+                    SqrtBox["2"]}], "95"], "]"}]}], "-", 
+                    FractionBox[
+                    RowBox[{"250542", " ", "#1"}], "35"], "-", 
+                    RowBox[{
+                    FractionBox["324", "35"], " ", 
+                    SuperscriptBox["\[ExponentialE]", 
+                    RowBox[{"-", 
+                    FractionBox["119", 
+                    RowBox[{"50", " ", "#1"}]]}]], " ", "#1"}]}], "&"}], ",", 
+                
+                RowBox[{
+                 "-", "2.\
+6406638772844274567163436400360872033164166625573611183333`30."}]}], "}"}], 
+            "]"}], Short[#, 7]& ], -2.6406638772844273`},
+        "NumericalApproximation"],
+       Root[{
+        Rational[-4604769, 250] + 
+         Rational[-6561, 5] 
+          E^(Rational[231, 100]/#) + (Rational[2187, 266] 
+           E^Rational[-49, 72200]) (2 Pi)^Rational[-1, 2] + 
+         Rational[-51, 70] Erf[Rational[3, 95] 2^Rational[-1, 2]] + 
+         Rational[-51, 70] Erf[Rational[3, 95] 2^Rational[1, 2]] + 
+         Rational[-250542, 35] # + (Rational[-324, 35] 
+           E^(Rational[-119, 
+               50]/#)) #& , \
+-2.6406638772844274567163436400360872033164166625573611183333`30.}]]}], ",", 
+     RowBox[{"b", "\[Rule]", 
+      RowBox[{"-", 
+       RowBox[{"(", 
+        RowBox[{"7", "/", "10"}], ")"}]}]}], ",", 
+     RowBox[{"c", "\[Rule]", 
+      RowBox[{"-", 
+       RowBox[{"(", 
+        RowBox[{"49", "/", "10"}], ")"}]}]}], ",", 
+     RowBox[{"d", "\[Rule]", 
+      RowBox[{"-", 
+       RowBox[{"(", 
+        RowBox[{"7", "/", "5"}], ")"}]}]}], ",", 
+     RowBox[{"e", "\[Rule]", 
+      RowBox[{"3", "/", "10"}]}], ",", 
+     RowBox[{"f", "\[Rule]", 
+      RowBox[{"-", 
+       RowBox[{"(", 
+        RowBox[{"9", "/", "5"}], ")"}]}]}], ",", 
+     RowBox[{"x", "\[Rule]", 
+      RowBox[{"-", 
+       RowBox[{"(", 
+        RowBox[{"19", "/", "5"}], ")"}]}]}], ",", 
+     RowBox[{"m", "\[Rule]", 
+      RowBox[{"-", 
+       RowBox[{"(", 
+        RowBox[{"18", "/", "5"}], ")"}]}]}], ",", 
+     RowBox[{"\[Mu]", "\[Rule]", 
+      RowBox[{"-", 
+       RowBox[{"(", 
+        RowBox[{"12", "/", "5"}], ")"}]}]}], ",", 
+     RowBox[{"\[Sigma]", "\[Rule]", "38"}], ",", 
+     RowBox[{"t", "\[Rule]", 
+      RowBox[{"33", "/", "10"}]}], ",", 
+     RowBox[{"T", "\[Rule]", 
+      RowBox[{"-", 
+       RowBox[{"(", 
+        RowBox[{"17", "/", "5"}], ")"}]}]}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", 
+      InterpretationBox[
+       TemplateBox[{"Root", 
+         InterpretationBox[
+          StyleBox[
+           TemplateBox[{"\"-2.94\"", 
+             DynamicBox[
+              FEPrivate`FrontEndResource[
+              "FEExpressions", "NumericalApproximationElider"]]}, 
+            "RowDefault"], ShowStringCharacters -> 
+           False], -2.94055328092429490993708895985037088394`15.\
+954589770191003, Editable -> False], 
+         TagBox[
+          RowBox[{"Root", "[", 
+            RowBox[{"{", 
+              RowBox[{
+                RowBox[{
+                  RowBox[{
+                    RowBox[{"-", 
+                    FractionBox["497201", "320"]}], "-", 
+                    RowBox[{
+                    FractionBox["729", "5"], " ", 
+                    SuperscriptBox["\[ExponentialE]", 
+                    FractionBox["76", 
+                    RowBox[{"25", " ", "#1"}]]]}], "+", 
+                    FractionBox["3159", 
+                    RowBox[{"80", " ", 
+                    SuperscriptBox["\[ExponentialE]", 
+                    RowBox[{"2809", "/", "45000"}]], " ", 
+                    SqrtBox[
+                    RowBox[{"2", " ", "\[Pi]"}]]}]], "-", 
+                    RowBox[{
+                    FractionBox["13", "32"], " ", 
+                    RowBox[{"Erf", "[", 
+                    FractionBox["41", 
+                    RowBox[{"150", " ", 
+                    SqrtBox["2"]}]], "]"}]}], "+", 
+                    RowBox[{
+                    FractionBox["13", "32"], " ", 
+                    RowBox[{"Erf", "[", 
+                    FractionBox[
+                    RowBox[{"2", " ", 
+                    SqrtBox["2"]}], "15"], "]"}]}], "-", 
+                    FractionBox[
+                    RowBox[{"692439", " ", "#1"}], "1280"], "-", 
+                    RowBox[{
+                    FractionBox["1", "80"], " ", 
+                    SuperscriptBox["\[ExponentialE]", 
+                    RowBox[{"-", 
+                    FractionBox["8", 
+                    RowBox[{"5", " ", "#1"}]]}]], " ", "#1"}]}], "&"}], ",", 
+                
+                RowBox[{
+                 "-", "2.\
+94055328092429495882658588952980499052197132276316410838`30."}]}], "}"}], 
+            "]"}], Short[#, 7]& ], -2.940553280924295},
+        "NumericalApproximation"],
+       Root[{
+        Rational[-497201, 320] + 
+         Rational[-729, 5] 
+          E^(Rational[76, 25]/#) + (Rational[3159, 80] 
+           E^Rational[-2809, 45000]) (2 Pi)^Rational[-1, 2] + 
+         Rational[-13, 32] Erf[Rational[41, 150] 2^Rational[-1, 2]] + 
+         Rational[13, 32] Erf[Rational[2, 15] 2^Rational[1, 2]] + 
+         Rational[-692439, 1280] # + (Rational[-1, 80] 
+           E^(Rational[-8, 
+               5]/#)) #& , \
+-2.94055328092429495882658588952980499052197132276316410838`30.}]]}], ",", 
+     RowBox[{"b", "\[Rule]", 
+      RowBox[{"8", "/", "5"}]}], ",", 
+     RowBox[{"c", "\[Rule]", 
+      RowBox[{"-", 
+       RowBox[{"(", 
+        RowBox[{"19", "/", "10"}], ")"}]}]}], ",", 
+     RowBox[{"d", "\[Rule]", 
+      RowBox[{"-", 
+       RowBox[{"(", 
+        RowBox[{"1", "/", "5"}], ")"}]}]}], ",", 
+     RowBox[{"e", "\[Rule]", 
+      RowBox[{"-", 
+       RowBox[{"(", 
+        RowBox[{"13", "/", "10"}], ")"}]}]}], ",", 
+     RowBox[{"f", "\[Rule]", 
+      RowBox[{"-", 
+       RowBox[{"(", 
+        RowBox[{"1", "/", "5"}], ")"}]}]}], ",", 
+     RowBox[{"x", "\[Rule]", 
+      RowBox[{"-", 
+       RowBox[{"(", 
+        RowBox[{"6", "/", "5"}], ")"}]}]}], ",", 
+     RowBox[{"m", "\[Rule]", 
+      RowBox[{"1", "/", "10"}]}], ",", 
+     RowBox[{"\[Mu]", "\[Rule]", 
+      RowBox[{"41", "/", "10"}]}], ",", 
+     RowBox[{"\[Sigma]", "\[Rule]", "15"}], ",", 
+     RowBox[{"t", "\[Rule]", 
+      RowBox[{"-", 
+       RowBox[{"(", 
+        RowBox[{"19", "/", "10"}], ")"}]}]}], ",", 
+     RowBox[{"T", "\[Rule]", "1"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", 
+      InterpretationBox[
+       TemplateBox[{"Root", 
+         InterpretationBox[
+          StyleBox[
+           TemplateBox[{"\"46.0\"", 
+             DynamicBox[
+              FEPrivate`FrontEndResource[
+              "FEExpressions", "NumericalApproximationElider"]]}, 
+            "RowDefault"], ShowStringCharacters -> False], 
+          46.03469669999073232702357927337288856506`15.954589770191003, 
+          Editable -> False], 
+         TagBox[
+          RowBox[{"Root", "[", 
+            RowBox[{"{", 
+              RowBox[{
+                RowBox[{
+                  RowBox[{
+                    FractionBox["12468729", "15500"], "-", 
+                    RowBox[{
+                    FractionBox["22599", "10"], " ", 
+                    SuperscriptBox["\[ExponentialE]", 
+                    FractionBox["1147", 
+                    RowBox[{"100", " ", "#1"}]]]}], "-", 
+                    FractionBox["729", 
+                    RowBox[{"1085", " ", 
+                    SuperscriptBox["\[ExponentialE]", 
+                    RowBox[{"8", "/", "1225"}]], " ", 
+                    SqrtBox[
+                    RowBox[{"2", " ", "\[Pi]"}]]}]], "-", 
+                    RowBox[{
+                    FractionBox["1", "310"], " ", 
+                    RowBox[{"Erf", "[", 
+                    FractionBox["1", 
+                    RowBox[{"70", " ", 
+                    SqrtBox["2"]}]], "]"}]}], "-", 
+                    RowBox[{
+                    FractionBox["1", "310"], " ", 
+                    RowBox[{"Erf", "[", 
+                    FractionBox["9", 
+                    RowBox[{"175", " ", 
+                    SqrtBox["2"]}]], "]"}]}], "+", 
+                    FractionBox[
+                    RowBox[{"240941", " ", "#1"}], "4805"], "-", 
+                    RowBox[{
+                    FractionBox["23", "5"], " ", 
+                    SuperscriptBox["\[ExponentialE]", 
+                    FractionBox["31", 
+                    RowBox[{"100", " ", "#1"}]]], " ", "#1"}]}], "&"}], ",", 
+                "46.03469669999073209708749450654638520963`30."}], "}"}], 
+            "]"}], Short[#, 7]& ], 46.03469669999073},
+        "NumericalApproximation"],
+       Root[{
+        Rational[12468729, 15500] + 
+         Rational[-22599, 10] 
+          E^(Rational[1147, 100]/#) + (Rational[-729, 1085] 
+           E^Rational[-8, 1225]) (2 Pi)^Rational[-1, 2] + 
+         Rational[-1, 310] Erf[Rational[1, 70] 2^Rational[-1, 2]] + 
+         Rational[-1, 310] Erf[Rational[9, 175] 2^Rational[-1, 2]] + 
+         Rational[240941, 4805] # + (Rational[-23, 5] 
+           E^(Rational[31, 100]/#)) #& , 
+         46.03469669999073209708749450654638520963`30.}]]}], ",", 
+     RowBox[{"b", "\[Rule]", 
+      RowBox[{"31", "/", "10"}]}], ",", 
+     RowBox[{"c", "\[Rule]", 
+      RowBox[{"3", "/", "5"}]}], ",", 
+     RowBox[{"d", "\[Rule]", 
+      RowBox[{"-", 
+       RowBox[{"(", 
+        RowBox[{"6", "/", "5"}], ")"}]}]}], ",", 
+     RowBox[{"e", "\[Rule]", 
+      RowBox[{"1", "/", "5"}]}], ",", 
+     RowBox[{"f", "\[Rule]", 
+      RowBox[{"-", 
+       RowBox[{"(", 
+        RowBox[{"31", "/", "10"}], ")"}]}]}], ",", 
+     RowBox[{"x", "\[Rule]", 
+      RowBox[{"-", 
+       RowBox[{"(", 
+        RowBox[{"22", "/", "5"}], ")"}]}]}], ",", 
+     RowBox[{"m", "\[Rule]", 
+      RowBox[{"23", "/", "5"}]}], ",", 
+     RowBox[{"\[Mu]", "\[Rule]", 
+      RowBox[{"18", "/", "5"}]}], ",", 
+     RowBox[{"\[Sigma]", "\[Rule]", "70"}], ",", 
+     RowBox[{"t", "\[Rule]", 
+      RowBox[{"-", 
+       RowBox[{"(", 
+        RowBox[{"37", "/", "10"}], ")"}]}]}], ",", 
+     RowBox[{"T", "\[Rule]", 
+      RowBox[{"-", 
+       RowBox[{"(", 
+        RowBox[{"1", "/", "10"}], ")"}]}]}]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.856234904050462*^9, 3.8562352000093284`*^9, 
+  3.8564383548314257`*^9},
+ CellLabel->
+  "Out[109]=",ExpressionUUID->"6ee2e5bf-74a4-4b30-915b-f1e7635b81b4"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"n", "=", 
+   FractionBox["729", "3"]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"W", "[", "t_", "]"}], ":=", 
+   RowBox[{
+    FractionBox[
+     RowBox[{
+      RowBox[{
+       RowBox[{"-", "b"}], " ", "e", " ", 
+       RowBox[{"Exp", "[", 
+        RowBox[{"-", 
+         FractionBox[
+          SuperscriptBox[
+           RowBox[{"(", 
+            RowBox[{"x", "-", "\[Mu]"}], ")"}], "2"], 
+          RowBox[{"2", " ", 
+           SuperscriptBox["\[Sigma]", "2"]}]]}], "]"}], " ", 
+       SqrtBox[
+        FractionBox["2", "\[Pi]"]]}], "+", 
+      RowBox[{"2", " ", "a", " ", "c", " ", "\[Sigma]"}], "-", 
+      RowBox[{"2", " ", "b", " ", 
+       RowBox[{"(", 
+        RowBox[{"d", "+", 
+         RowBox[{"c", " ", "t"}]}], ")"}], " ", "\[Sigma]"}]}], 
+     RowBox[{"2", " ", 
+      SuperscriptBox["b", "2"], " ", "\[Sigma]"}]], "+", 
+    RowBox[{
+     RowBox[{"Exp", "[", 
+      RowBox[{"-", 
+       FractionBox[
+        RowBox[{"b", " ", "t"}], "a"]}], "]"}], " ", "f"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"sols", "=", 
+   RowBox[{"FindInstance", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"n", " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"W", "[", "t", "]"}], "+", 
+         FractionBox[
+          RowBox[{"W", "[", "t", "]"}], 
+          RowBox[{"1", "+", "r"}]], "+", 
+         FractionBox[
+          RowBox[{"W", "[", "t", "]"}], 
+          SuperscriptBox[
+           RowBox[{"(", 
+            RowBox[{"1", "+", "r"}], ")"}], "2"]]}], ")"}]}], "\[Equal]", 
+      RowBox[{"Evaluate", "[", 
+       RowBox[{
+        SubsuperscriptBox["\[Integral]", "0", "T"], 
+        RowBox[{
+         SubsuperscriptBox["\[Integral]", "0", "m"], 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"W", "[", "t", "]"}], "+", 
+            FractionBox[
+             RowBox[{"W", "[", "t", "]"}], 
+             RowBox[{"1", "+", "r"}]], "+", 
+            FractionBox[
+             RowBox[{"W", "[", "t", "]"}], 
+             SuperscriptBox[
+              RowBox[{"(", 
+               RowBox[{"1", "+", "r"}], ")"}], "2"]]}], ")"}], 
+          RowBox[{"\[DifferentialD]", "x"}], 
+          RowBox[{"\[DifferentialD]", "t"}]}]}]}], "]"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+      "a", ",", "b", ",", "c", ",", "d", ",", "e", ",", "f", ",", "x", ",", 
+       "m", ",", "\[Mu]", ",", "\[Sigma]", ",", "r", ",", "t", ",", "T"}], 
+      "}"}], ",", "Reals", ",", "7"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Sort", "[", "sols", "]"}]}], "Input",
+ CellChangeTimes->{{3.8564141597803936`*^9, 3.856414168905089*^9}, {
+  3.8564142009664683`*^9, 3.856414203013294*^9}, {3.8564358677945595`*^9, 
+  3.856435880231614*^9}},
+ CellLabel->
+  "In[110]:=",ExpressionUUID->"e0cdcc27-f721-487f-acb9-e3b7ffa02b59"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", 
+      InterpretationBox[
+       TemplateBox[{"Root", 
+         InterpretationBox[
+          StyleBox[
+           TemplateBox[{"\"2.51\"", 
+             DynamicBox[
+              FEPrivate`FrontEndResource[
+              "FEExpressions", "NumericalApproximationElider"]]}, 
+            "RowDefault"], ShowStringCharacters -> False], 
+          2.50837333615250024365650460822507739067`15.954589770191003, 
+          Editable -> False], 
+         TagBox[
+          RowBox[{"Root", "[", 
+            RowBox[{"{", 
+              RowBox[{
+                RowBox[{
+                  RowBox[{
+                    FractionBox["75100081", "96000"], "-", 
+                    RowBox[{
+                    FractionBox["19467", "32"], " ", 
+                    SuperscriptBox["\[ExponentialE]", 
+                    RowBox[{"-", 
+                    FractionBox["171", 
+                    RowBox[{"50", " ", "#1"}]]}]]}], "+", 
+                    FractionBox["15141", 
+                    RowBox[{"3712", " ", 
+                    SuperscriptBox["\[ExponentialE]", 
+                    RowBox[{"4761", "/", 
+                    RowBox[{"", 
+                    RowBox[{"\[LeftSkeleton]", "6", "\[RightSkeleton]"}], 
+                    ""}]}]], " ", 
+                    SqrtBox[
+                    RowBox[{"2", " ", "\[Pi]"}]]}]], "+", 
+                    FractionBox[
+                    RowBox[{"5047", " ", 
+                    RowBox[{"\[LeftSkeleton]", "1", "\[RightSkeleton]"}]}], 
+                    "2880"], "-", 
+                    FractionBox[
+                    RowBox[{"5047", " ", 
+                    RowBox[{"Erf", "[", 
+                    FractionBox["83", 
+                    RowBox[{"\[LeftSkeleton]", "1", "\[RightSkeleton]"}]], 
+                    "]"}]}], "2880"], "-", 
+                    FractionBox[
+                    RowBox[{"540029", " ", "#1"}], "2160"], "-", 
+                    FractionBox[
+                    RowBox[{"29561", " ", 
+                    SuperscriptBox["\[ExponentialE]", 
+                    RowBox[{"-", 
+                    FractionBox["162", 
+                    RowBox[{"25", " ", "#1"}]]}]], " ", "#1"}], "5184"]}], 
+                  "&"}], ",", 
+                RowBox[{"\[LeftSkeleton]", "64", "\[RightSkeleton]"}]}], 
+              "}"}], "]"}], Short[#, 7]& ], 2.5083733361525002`},
+        "NumericalApproximation"],
+       Root[{
+        Rational[75100081, 96000] + 
+         Rational[-19467, 32] 
+          E^(Rational[-171, 50]/#) + (Rational[15141, 3712] 
+           E^Rational[-4761, 672800]) (2 Pi)^Rational[-1, 2] + 
+         Rational[5047, 2880] Erf[Rational[21, 290] 2^Rational[-1, 2]] + 
+         Rational[-5047, 2880] Erf[Rational[83, 580] 2^Rational[-1, 2]] + 
+         Rational[-540029, 2160] # + (Rational[-29561, 5184] 
+           E^(Rational[-162, 25]/#)) #& , 
+         2.5083733361525003742791972434941206708300174393918123735376`30.}]]}]\
+, ",", 
+     RowBox[{"b", "\[Rule]", 
+      FractionBox["9", "5"]}], ",", 
+     RowBox[{"c", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["29", "10"]}]}], ",", 
+     RowBox[{"d", "\[Rule]", 
+      FractionBox["3", "5"]}], ",", 
+     RowBox[{"e", "\[Rule]", 
+      FractionBox["7", "5"]}], ",", 
+     RowBox[{"f", "\[Rule]", 
+      RowBox[{"-", "2"}]}], ",", 
+     RowBox[{"x", "\[Rule]", 
+      FractionBox["27", "10"]}], ",", 
+     RowBox[{"m", "\[Rule]", 
+      FractionBox["41", "10"]}], ",", 
+     RowBox[{"\[Mu]", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["21", "5"]}]}], ",", 
+     RowBox[{"\[Sigma]", "\[Rule]", 
+      RowBox[{"-", "58"}]}], ",", 
+     RowBox[{"r", "\[Rule]", 
+      FractionBox["19", "5"]}], ",", 
+     RowBox[{"t", "\[Rule]", 
+      FractionBox["19", "10"]}], ",", 
+     RowBox[{"T", "\[Rule]", 
+      FractionBox["18", "5"]}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", 
+      InterpretationBox[
+       TemplateBox[{"Root", 
+         InterpretationBox[
+          StyleBox[
+           TemplateBox[{"\"-2.68\"", 
+             DynamicBox[
+              FEPrivate`FrontEndResource[
+              "FEExpressions", "NumericalApproximationElider"]]}, 
+            "RowDefault"], ShowStringCharacters -> 
+           False], -2.67738467346113395706197479739785194397`15.\
+954589770191003, Editable -> False], 
+         TagBox[
+          RowBox[{"Root", "[", 
+            RowBox[{"{", 
+              RowBox[{
+                RowBox[{
+                  RowBox[{
+                    FractionBox["2180324331", "2197000"], "+", 
+                    RowBox[{
+                    FractionBox["188082", "845"], " ", 
+                    SuperscriptBox["\[ExponentialE]", 
+                    FractionBox["78", 
+                    RowBox[{"25", " ", "#1"}]]]}], "-", 
+                    FractionBox["909063", 
+                    RowBox[{"193336", " ", 
+                    SuperscriptBox["\[ExponentialE]", 
+                    RowBox[{"49", "/", 
+                    RowBox[{"\[LeftSkeleton]", "6", "\[RightSkeleton]"}]}]], 
+                    " ", 
+                    SqrtBox[
+                    RowBox[{"2", " ", "\[Pi]"}]]}]], "-", 
+                    FractionBox[
+                    RowBox[{
+                    RowBox[{"1", 
+                    RowBox[{"\[LeftSkeleton]", "4", "\[RightSkeleton]"}], 
+                    "3"}], 
+                    RowBox[{"\[LeftSkeleton]", "1", "\[RightSkeleton]"}], 
+                    RowBox[{"\[LeftSkeleton]", "1", "\[RightSkeleton]"}]}], 
+                    "43940"], "+", 
+                    FractionBox[
+                    RowBox[{"160863", " ", 
+                    RowBox[{"\[LeftSkeleton]", "1", "\[RightSkeleton]"}]}], 
+                    "43940"], "+", 
+                    FractionBox[
+                    RowBox[{"52808601", " ", "#1"}], "142805"], "+", 
+                    FractionBox[
+                    RowBox[{"35604", " ", 
+                    SuperscriptBox["\[ExponentialE]", 
+                    RowBox[{"-", 
+                    FractionBox["559", 
+                    RowBox[{"100", " ", "#1"}]]}]], " ", "#1"}], "10985"]}], 
+                  "&"}], ",", 
+                RowBox[{"-", 
+                  RowBox[{"\[LeftSkeleton]", "64", "\[RightSkeleton]"}]}]}], 
+              "}"}], "]"}], Short[#, 7]& ], -2.677384673461134},
+        "NumericalApproximation"],
+       Root[{
+        Rational[2180324331, 2197000] + 
+         Rational[188082, 845] 
+          E^(Rational[78, 25]/#) + (Rational[-909063, 193336] 
+           E^Rational[-49, 387200]) (2 Pi)^Rational[-1, 2] + 
+         Rational[-160863, 43940] Erf[Rational[29, 880] 2^Rational[-1, 2]] + 
+         Rational[160863, 43940] Erf[Rational[15, 176] 2^Rational[-1, 2]] + 
+         Rational[52808601, 142805] # + (Rational[35604, 10985] 
+           E^(Rational[-559, 
+               100]/#)) #& , \
+-2.6773846734611338119219824531720875293964466731929284101397`30.}]]}], ",", 
+     RowBox[{"b", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["13", "10"]}]}], ",", 
+     RowBox[{"c", "\[Rule]", 
+      FractionBox["37", "10"]}], ",", 
+     RowBox[{"d", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["14", "5"]}]}], ",", 
+     RowBox[{"e", "\[Rule]", 
+      FractionBox["29", "10"]}], ",", 
+     RowBox[{"f", "\[Rule]", 
+      FractionBox["6", "5"]}], ",", 
+     RowBox[{"x", "\[Rule]", 
+      FractionBox["3", "2"]}], ",", 
+     RowBox[{"m", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["23", "5"]}]}], ",", 
+     RowBox[{"\[Mu]", "\[Rule]", 
+      FractionBox["29", "10"]}], ",", 
+     RowBox[{"\[Sigma]", "\[Rule]", 
+      RowBox[{"-", "88"}]}], ",", 
+     RowBox[{"r", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["18", "5"]}]}], ",", 
+     RowBox[{"t", "\[Rule]", 
+      FractionBox["12", "5"]}], ",", 
+     RowBox[{"T", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["43", "10"]}]}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", 
+      InterpretationBox[
+       TemplateBox[{"Root", 
+         InterpretationBox[
+          StyleBox[
+           TemplateBox[{"\"17.5\"", 
+             DynamicBox[
+              FEPrivate`FrontEndResource[
+              "FEExpressions", "NumericalApproximationElider"]]}, 
+            "RowDefault"], ShowStringCharacters -> False], 
+          17.50433421639629827382123039569705724716`15.954589770191003, 
+          Editable -> False], 
+         TagBox[
+          RowBox[{"Root", "[", 
+            RowBox[{"{", 
+              RowBox[{
+                RowBox[{
+                  RowBox[{
+                    RowBox[{"-", 
+                    FractionBox["2227293", "1000"]}], "+", 
+                    RowBox[{
+                    FractionBox["44469", "80"], " ", 
+                    SuperscriptBox["\[ExponentialE]", 
+                    RowBox[{"-", 
+                    FractionBox["663", 
+                    RowBox[{"50", " ", "#1"}]]}]]}], "-", 
+                    FractionBox[
+                    RowBox[{"891", " ", 
+                    SqrtBox[
+                    FractionBox["2", "\[Pi]"]]}], 
+                    RowBox[{"325", " ", 
+                    SuperscriptBox["\[ExponentialE]", 
+                    RowBox[{"49", "/", "125000"}]]}]], "-", 
+                    FractionBox["8019", 
+                    RowBox[{"520", " ", 
+                    RowBox[{"\[LeftSkeleton]", "1", "\[RightSkeleton]"}], " ", 
+                    RowBox[{"\[LeftSkeleton]", "1", "\[RightSkeleton]"}]}]], 
+                    "+", 
+                    RowBox[{
+                    FractionBox["671", "520"], " ", 
+                    RowBox[{"\[LeftSkeleton]", "1", "\[RightSkeleton]"}]}], 
+                    "-", 
+                    RowBox[{
+                    FractionBox["671", "520"], " ", 
+                    RowBox[{"Erf", "[", 
+                    FractionBox[
+                    RowBox[{"4", " ", 
+                    SqrtBox["2"]}], "125"], "]"}]}], "+", 
+                    FractionBox[
+                    RowBox[{"4501373", " ", "#1"}], "40560"], "+", 
+                    FractionBox[
+                    RowBox[{"2501", " ", 
+                    SuperscriptBox["\[ExponentialE]", 
+                    RowBox[{"-", 
+                    FractionBox["117", 
+                    RowBox[{"25", " ", "#1"}]]}]], " ", "#1"}], "1040"]}], 
+                  "&"}], ",", 
+                RowBox[{"\[LeftSkeleton]", "45", "\[RightSkeleton]"}]}], 
+              "}"}], "]"}], Short[#, 7]& ], 17.5043342163963},
+        "NumericalApproximation"],
+       Root[{
+        Rational[-2227293, 1000] + 
+         Rational[44469, 80] 
+          E^(Rational[-663, 50]/#) + (Rational[-891, 325] 
+           E^Rational[-49, 125000]) (2/Pi)^Rational[1, 2] + (
+           Rational[-8019, 520] E^Rational[-49, 125000]) (2 Pi)^
+           Rational[-1, 2] + 
+         Rational[671, 520] Erf[Rational[57, 250] 2^Rational[-1, 2]] + 
+         Rational[-671, 520] Erf[Rational[4, 125] 2^Rational[1, 2]] + 
+         Rational[4501373, 40560] # + (Rational[2501, 1040] 
+           E^(Rational[-117, 25]/#)) #& , 
+         17.50433421639629672343498772849077432156`30.}]]}], ",", 
+     RowBox[{"b", "\[Rule]", 
+      FractionBox["39", "10"]}], ",", 
+     RowBox[{"c", "\[Rule]", 
+      FractionBox["19", "10"]}], ",", 
+     RowBox[{"d", "\[Rule]", "3"}], ",", 
+     RowBox[{"e", "\[Rule]", 
+      FractionBox["11", "5"]}], ",", 
+     RowBox[{"f", "\[Rule]", 
+      FractionBox["3", "5"]}], ",", 
+     RowBox[{"x", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["23", "10"]}]}], ",", 
+     RowBox[{"m", "\[Rule]", 
+      FractionBox["41", "10"]}], ",", 
+     RowBox[{"\[Mu]", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["8", "5"]}]}], ",", 
+     RowBox[{"\[Sigma]", "\[Rule]", "25"}], ",", 
+     RowBox[{"r", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["1", "5"]}]}], ",", 
+     RowBox[{"t", "\[Rule]", 
+      FractionBox["17", "5"]}], ",", 
+     RowBox[{"T", "\[Rule]", 
+      FractionBox["6", "5"]}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", 
+      InterpretationBox[
+       TemplateBox[{"Root", 
+         InterpretationBox[
+          StyleBox[
+           TemplateBox[{"\"-21.2\"", 
+             DynamicBox[
+              FEPrivate`FrontEndResource[
+              "FEExpressions", "NumericalApproximationElider"]]}, 
+            "RowDefault"], ShowStringCharacters -> 
+           False], -21.23945144595506562268383277114480733871`15.\
+954589770191003, Editable -> False], 
+         TagBox[
+          RowBox[{"Root", "[", 
+            RowBox[{"{", 
+              RowBox[{
+                RowBox[{
+                  RowBox[{
+                    FractionBox["12865619853", "5408000"], "+", 
+                    FractionBox[
+                    RowBox[{"1466019", " ", 
+                    SuperscriptBox["\[ExponentialE]", 
+                    FractionBox["16", "#1"]]}], "1690"], "-", 
+                    FractionBox["162891", 
+                    RowBox[{"205504", " ", 
+                    SuperscriptBox["\[ExponentialE]", 
+                    RowBox[{"961", 
+                    RowBox[{"\[LeftSkeleton]", "1", "\[RightSkeleton]"}], 
+                    RowBox[{"\[LeftSkeleton]", "6", "\[RightSkeleton]"}]}]], 
+                    " ", 
+                    SqrtBox[
+                    RowBox[{"2", " ", "\[Pi]"}]]}]], "-", 
+                    FractionBox[
+                    RowBox[{"6033", 
+                    RowBox[{"\[LeftSkeleton]", "1", "\[RightSkeleton]"}], 
+                    RowBox[{"\[LeftSkeleton]", "1", "\[RightSkeleton]"}]}], 
+                    "108160"], "+", 
+                    FractionBox[
+                    RowBox[{"6033", " ", 
+                    RowBox[{"\[LeftSkeleton]", "1", "\[RightSkeleton]"}]}], 
+                    "108160"], "+", 
+                    FractionBox[
+                    RowBox[{"111664797", " ", "#1"}], "865280"], "+", 
+                    FractionBox[
+                    RowBox[{"102561", " ", 
+                    SuperscriptBox["\[ExponentialE]", 
+                    RowBox[{"-", 
+                    FractionBox["72", 
+                    RowBox[{"25", " ", "#1"}]]}]], " ", "#1"}], "54080"]}], 
+                  "&"}], ",", 
+                RowBox[{"-", 
+                  RowBox[{"\[LeftSkeleton]", "45", "\[RightSkeleton]"}]}]}], 
+              "}"}], "]"}], Short[#, 7]& ], -21.239451445955066`},
+        "NumericalApproximation"],
+       Root[{
+        Rational[12865619853, 5408000] + 
+         Rational[1466019, 1690] 
+          E^(16/#) + (Rational[-162891, 205504] 
+           E^Rational[-961, 288800]) (2 Pi)^Rational[-1, 2] + 
+         Rational[-6033, 108160] Erf[Rational[11, 380] 2^Rational[-1, 2]] + 
+         Rational[6033, 108160] Erf[Rational[7, 95] 2^Rational[-1, 2]] + 
+         Rational[111664797, 865280] # + (Rational[102561, 54080] 
+           E^(Rational[-72, 
+               25]/#)) #& , \
+-21.23945144595506431081598178488841740403`30.}]]}], ",", 
+     RowBox[{"b", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["16", "5"]}]}], ",", 
+     RowBox[{"c", "\[Rule]", 
+      FractionBox["21", "5"]}], ",", 
+     RowBox[{"d", "\[Rule]", 
+      FractionBox["27", "10"]}], ",", 
+     RowBox[{"e", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["3", "10"]}]}], ",", 
+     RowBox[{"f", "\[Rule]", 
+      FractionBox["27", "10"]}], ",", 
+     RowBox[{"x", "\[Rule]", 
+      FractionBox["21", "5"]}], ",", 
+     RowBox[{"m", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["17", "10"]}]}], ",", 
+     RowBox[{"\[Mu]", "\[Rule]", 
+      FractionBox["11", "10"]}], ",", 
+     RowBox[{"\[Sigma]", "\[Rule]", "38"}], ",", 
+     RowBox[{"r", "\[Rule]", 
+      FractionBox["29", "10"]}], ",", 
+     RowBox[{"t", "\[Rule]", "5"}], ",", 
+     RowBox[{"T", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["9", "10"]}]}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", 
+      InterpretationBox[
+       TemplateBox[{"Root", 
+         InterpretationBox[
+          StyleBox[
+           TemplateBox[{"\"-0.324\"", 
+             DynamicBox[
+              FEPrivate`FrontEndResource[
+              "FEExpressions", "NumericalApproximationElider"]]}, 
+            "RowDefault"], ShowStringCharacters -> 
+           False], -0.32393493395656897115841843515227083117`15.\
+954589770191003, Editable -> False], 
+         TagBox[
+          RowBox[{"Root", "[", 
+            RowBox[{"{", 
+              RowBox[{
+                RowBox[{
+                  RowBox[{
+                    RowBox[{"-", 
+                    FractionBox["784333361", "81000"]}], "+", 
+                    RowBox[{
+                    FractionBox["4944", "5"], " ", 
+                    SuperscriptBox["\[ExponentialE]", 
+                    FractionBox["4", 
+                    RowBox[{"25", " ", "#1"}]]]}], "+", 
+                    FractionBox["2163", 
+                    RowBox[{"4", " ", 
+                    SuperscriptBox["\[ExponentialE]", 
+                    RowBox[{"1", "/", "50"}]], " ", 
+                    SqrtBox[
+                    RowBox[{"2", " ", "\[Pi]"}]]}]], "-", 
+                    FractionBox[
+                    RowBox[{"95893", " ", 
+                    RowBox[{"Erf", "[", 
+                    FractionBox["1", 
+                    RowBox[{"\[LeftSkeleton]", "1", "\[RightSkeleton]"}]], 
+                    "]"}]}], "3240"], "-", 
+                    FractionBox[
+                    RowBox[{"95893", " ", 
+                    RowBox[{"Erf", "[", 
+                    FractionBox[
+                    SqrtBox["2"], "7"], "]"}]}], "3240"], "-", 
+                    FractionBox[
+                    RowBox[{"1245991", " ", "#1"}], "45"], "+", 
+                    RowBox[{
+                    FractionBox["36256", "405"], " ", 
+                    SuperscriptBox["\[ExponentialE]", 
+                    RowBox[{"-", 
+                    FractionBox["19", 
+                    RowBox[{"50", " ", "#1"}]]}]], " ", "#1"}]}], "&"}], ",", 
+                RowBox[{"-", 
+                  RowBox[{"\[LeftSkeleton]", "64", "\[RightSkeleton]"}]}]}], 
+              "}"}], "]"}], Short[#, 7]& ], -0.32393493395656897`},
+        "NumericalApproximation"],
+       Root[{
+        Rational[-784333361, 81000] + 
+         Rational[4944, 5] 
+          E^(Rational[4, 25]/#) + (Rational[2163, 4] 
+           E^Rational[-1, 50]) (2 Pi)^Rational[-1, 2] + 
+         Rational[-95893, 3240] Erf[Rational[1, 35] 2^Rational[-1, 2]] + 
+         Rational[-95893, 3240] Erf[Rational[1, 7] 2^Rational[1, 2]] + 
+         Rational[-1245991, 45] # + (Rational[36256, 405] 
+           E^(Rational[-19, 
+               50]/#)) #& , \
+-0.3239349339565689604242797031810175417241977120618291545675`30.}]]}], ",", 
+     RowBox[{"b", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["1", "5"]}]}], ",", 
+     RowBox[{"c", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["37", "10"]}]}], ",", 
+     RowBox[{"d", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["33", "10"]}]}], ",", 
+     RowBox[{"e", "\[Rule]", 
+      FractionBox["49", "10"]}], ",", 
+     RowBox[{"f", "\[Rule]", 
+      FractionBox["16", "5"]}], ",", 
+     RowBox[{"x", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["16", "5"]}]}], ",", 
+     RowBox[{"m", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["22", "5"]}]}], ",", 
+     RowBox[{"\[Mu]", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["2", "5"]}]}], ",", 
+     RowBox[{"\[Sigma]", "\[Rule]", "14"}], ",", 
+     RowBox[{"r", "\[Rule]", 
+      FractionBox["7", "2"]}], ",", 
+     RowBox[{"t", "\[Rule]", 
+      FractionBox["4", "5"]}], ",", 
+     RowBox[{"T", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["19", "10"]}]}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", 
+      InterpretationBox[
+       TemplateBox[{"Root", 
+         InterpretationBox[
+          StyleBox[
+           TemplateBox[{"\"-0.103\"", 
+             DynamicBox[
+              FEPrivate`FrontEndResource[
+              "FEExpressions", "NumericalApproximationElider"]]}, 
+            "RowDefault"], ShowStringCharacters -> 
+           False], -0.10293342089996133925655641405683127232`15.\
+954589770191003, Editable -> False], 
+         TagBox[
+          RowBox[{"Root", "[", 
+            RowBox[{"{", 
+              RowBox[{
+                RowBox[{
+                  RowBox[{
+                    FractionBox["67484595647", "409600000"], "-", 
+                    RowBox[{
+                    FractionBox["19467", "100"], " ", 
+                    SuperscriptBox["\[ExponentialE]", 
+                    RowBox[{"-", 
+                    FractionBox["19", 
+                    RowBox[{"320", " ", "#1"}]]}]]}], "-", 
+                    FractionBox[
+                    RowBox[{"4326", " ", 
+                    SqrtBox[
+                    FractionBox["2", "\[Pi]"]]}], 
+                    RowBox[{"1375", " ", 
+                    SuperscriptBox["\[ExponentialE]", 
+                    RowBox[{"98", "/", 
+                    RowBox[{"", 
+                    RowBox[{"\[LeftSkeleton]", "6", "\[RightSkeleton]"}], 
+                    ""}]}]]}]], "-", 
+                    FractionBox[
+                    RowBox[{"9373", " ", 
+                    RowBox[{"\[LeftSkeleton]", "1", "\[RightSkeleton]"}]}], 
+                    "720000"], "-", 
+                    FractionBox[
+                    RowBox[{"9373", " ", 
+                    RowBox[{"Erf", "[", 
+                    RowBox[{"\[LeftSkeleton]", "1", "\[RightSkeleton]"}], 
+                    "]"}]}], "720000"], "-", 
+                    FractionBox[
+                    RowBox[{"1147009339", " ", "#1"}], "640000"], "+", 
+                    RowBox[{
+                    FractionBox["721", "800"], " ", 
+                    SuperscriptBox["\[ExponentialE]", 
+                    RowBox[{"-", 
+                    FractionBox["13", 
+                    RowBox[{"320", " ", "#1"}]]}]], " ", "#1"}]}], "&"}], ",", 
+                RowBox[{"-", 
+                  RowBox[{"\[LeftSkeleton]", "64", "\[RightSkeleton]"}]}]}], 
+              "}"}], "]"}], Short[#, 7]& ], -0.10293342089996134`},
+        "NumericalApproximation"],
+       Root[{
+        Rational[67484595647, 409600000] + 
+         Rational[-19467, 100] 
+          E^(Rational[-19, 320]/#) + (Rational[-4326, 1375] 
+           E^Rational[-98, 245025]) (2/Pi)^Rational[1, 2] + 
+         Rational[-9373, 720000] Erf[Rational[5, 198] 2^Rational[-1, 2]] + 
+         Rational[-9373, 720000] Erf[Rational[1, 99] 2^Rational[1, 2]] + 
+         Rational[-1147009339, 640000] # + (Rational[721, 800] 
+           E^(Rational[-13, 
+               320]/#)) #& , \
+-0.1029334208999613413431237147521042025896034162287082081374`30.}]]}], ",", 
+     RowBox[{"b", "\[Rule]", 
+      FractionBox["1", "4"]}], ",", 
+     RowBox[{"c", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["23", "160"]}]}], ",", 
+     RowBox[{"d", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["3", "160"]}]}], ",", 
+     RowBox[{"e", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["1", "80"]}]}], ",", 
+     RowBox[{"f", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["1", "4"]}]}], ",", 
+     RowBox[{"x", "\[Rule]", 
+      FractionBox["1", "20"]}], ",", 
+     RowBox[{"m", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["9", "32"]}]}], ",", 
+     RowBox[{"\[Mu]", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["1", "8"]}]}], ",", 
+     RowBox[{"\[Sigma]", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["99", "16"]}]}], ",", 
+     RowBox[{"r", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["1", "16"]}]}], ",", 
+     RowBox[{"t", "\[Rule]", 
+      FractionBox["19", "80"]}], ",", 
+     RowBox[{"T", "\[Rule]", 
+      FractionBox["13", "80"]}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", 
+      InterpretationBox[
+       TemplateBox[{"Root", 
+         InterpretationBox[
+          StyleBox[
+           TemplateBox[{"\"15.6\"", 
+             DynamicBox[
+              FEPrivate`FrontEndResource[
+              "FEExpressions", "NumericalApproximationElider"]]}, 
+            "RowDefault"], ShowStringCharacters -> False], 
+          15.61760380067942044490791886346414685249`15.954589770191003, 
+          Editable -> False], 
+         TagBox[
+          RowBox[{"Root", "[", 
+            RowBox[{"{", 
+              RowBox[{
+                RowBox[{
+                  RowBox[{
+                    FractionBox["17308297", "7840"], "+", 
+                    RowBox[{
+                    FractionBox["40554", "49"], " ", 
+                    SuperscriptBox["\[ExponentialE]", 
+                    RowBox[{"-", 
+                    FractionBox["396", 
+                    RowBox[{"25", " ", "#1"}]]}]]}], "-", 
+                    FractionBox["60831", 
+                    RowBox[{"1372", " ", 
+                    SuperscriptBox["\[ExponentialE]", 
+                    RowBox[{"121", "/", "2450"}]], " ", 
+                    SqrtBox[
+                    RowBox[{"2", " ", "\[Pi]"}]]}]], "-", 
+                    FractionBox[
+                    RowBox[{"751", " ", 
+                    RowBox[{"Erf", "[", 
+                    RowBox[{"\[LeftSkeleton]", "1", "\[RightSkeleton]"}], 
+                    "]"}]}], "2352"], "+", 
+                    FractionBox[
+                    RowBox[{"751", " ", 
+                    RowBox[{"Erf", "[", 
+                    FractionBox["11", 
+                    RowBox[{"\[LeftSkeleton]", "1", "\[RightSkeleton]"}]], 
+                    "]"}]}], "2352"], "-", 
+                    FractionBox[
+                    RowBox[{"90736571", " ", "#1"}], "571536"], "-", 
+                    FractionBox[
+                    RowBox[{"751", " ", 
+                    SuperscriptBox["\[ExponentialE]", 
+                    FractionBox["9", 
+                    RowBox[{"5", " ", "#1"}]]], " ", "#1"}], "1134"]}], "&"}],
+                 ",", 
+                RowBox[{"\[LeftSkeleton]", "65", "\[RightSkeleton]"}]}], 
+              "}"}], "]"}], Short[#, 7]& ], 15.61760380067942},
+        "NumericalApproximation"],
+       Root[{
+        Rational[17308297, 7840] + 
+         Rational[40554, 49] 
+          E^(Rational[-396, 25]/#) + (Rational[-60831, 1372] 
+           E^Rational[-121, 2450]) (2 Pi)^Rational[-1, 2] + 
+         Rational[-751, 2352] Erf[Rational[3, 14] 2^Rational[-1, 2]] + 
+         Rational[751, 2352] Erf[Rational[11, 35] 2^Rational[-1, 2]] + 
+         Rational[-90736571, 571536] # + (Rational[-751, 1134] 
+           E^(Rational[9, 5]/#)) #& , 
+         15.6176038006794199655189138369330679770939597172815251139998`30.}]]}\
+], ",", 
+     RowBox[{"b", "\[Rule]", 
+      FractionBox["18", "5"]}], ",", 
+     RowBox[{"c", "\[Rule]", 
+      RowBox[{"-", "5"}]}], ",", 
+     RowBox[{"d", "\[Rule]", 
+      FractionBox["14", "5"]}], ",", 
+     RowBox[{"e", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["27", "10"]}]}], ",", 
+     RowBox[{"f", "\[Rule]", "2"}], ",", 
+     RowBox[{"x", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["7", "10"]}]}], ",", 
+     RowBox[{"m", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["7", "10"]}]}], ",", 
+     RowBox[{"\[Mu]", "\[Rule]", 
+      FractionBox["3", "2"]}], ",", 
+     RowBox[{"\[Sigma]", "\[Rule]", 
+      RowBox[{"-", "7"}]}], ",", 
+     RowBox[{"r", "\[Rule]", 
+      FractionBox["11", "10"]}], ",", 
+     RowBox[{"t", "\[Rule]", 
+      FractionBox["22", "5"]}], ",", 
+     RowBox[{"T", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["1", "2"]}]}]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.856438489023943*^9},
+ CellLabel->
+  "Out[113]=",ExpressionUUID->"7caccb86-22b2-419a-b249-fefc796c93ee"]
+}, Open  ]]
+},
+WindowSize->{1581, 801},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+TaggingRules->{
+ "WelcomeScreenSettings" -> {"FEStarting" -> False}, "TryRealOnly" -> False},
+Magnification:>1.4 Inherited,
+FrontEndVersion->"12.1 for Microsoft Windows (64-bit) (June 9, 2020)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"45bcf008-33fc-4098-afa9-9b4fd26ed501"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 399, 7, 40, "Input",ExpressionUUID->"e26587ab-68ca-4a31-a08e-0d3399255bd4"],
+Cell[CellGroupData[{
+Cell[982, 31, 1520, 36, 114, "Input",ExpressionUUID->"0a35ddd7-675b-4aa3-b755-52b4cb9a7bac"],
+Cell[2505, 69, 1245, 36, 99, "Output",ExpressionUUID->"cb21fcf5-fe09-4e42-8f8f-55898a1fc104"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3787, 110, 2713, 60, 227, "Input",ExpressionUUID->"8ace16f0-55e4-4c1a-9b13-b8642b8b1847"],
+Cell[6503, 172, 279, 4, 46, "Output",ExpressionUUID->"cf8c08e9-39e2-40fd-acdd-353a01e30086"],
+Cell[6785, 178, 12151, 309, 271, "Output",ExpressionUUID->"9de6fb5f-200e-4581-9b01-be57ac769da5"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18973, 492, 550, 16, 40, "Input",ExpressionUUID->"47348a84-205f-4300-a9e8-1ed7e4a64931"],
+Cell[19526, 510, 12163, 309, 251, "Output",ExpressionUUID->"bdf94d02-af54-4feb-ab6e-a9408ce5892f"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[31726, 824, 1038, 33, 125, "Input",ExpressionUUID->"97110dbe-b1b8-4bfe-b122-7f6c727bdde7"],
+Cell[32767, 859, 238, 3, 46, "Output",ExpressionUUID->"4455d745-20b3-47a0-aaf3-4ffd0ebec3c8"],
+Cell[33008, 864, 264, 5, 46, "Output",ExpressionUUID->"0ac7c761-28c7-43df-9f8f-59afdc8728ad"],
+Cell[33275, 871, 193, 2, 46, "Output",ExpressionUUID->"94c89324-a94d-4a46-937d-313d06bb0a4b"],
+Cell[33471, 875, 248, 4, 46, "Output",ExpressionUUID->"19140f19-6a7d-4016-97a6-06bf842f231f"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[33756, 884, 4600, 128, 255, "Input",ExpressionUUID->"0d8ce379-f167-42f7-85b0-98813c0fe70b"],
+Cell[38359, 1014, 188, 3, 46, "Output",ExpressionUUID->"b0f28a59-80c1-46b6-b9d9-c6406fd78daa"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[38584, 1022, 1929, 55, 211, "Input",ExpressionUUID->"aedca1f5-786c-4a52-882e-b9330c8f5633"],
+Cell[40516, 1079, 22971, 594, 340, "Output",ExpressionUUID->"64e7e688-243a-4759-883c-11f38fcd145e"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[63524, 1678, 2838, 80, 251, "Input",ExpressionUUID->"39deb915-3909-4e1d-8fc0-53db827917bc"],
+Cell[66365, 1760, 25329, 640, 340, "Output",ExpressionUUID->"e405e290-be8c-4a7c-b3de-93044585e321"]
+}, Open  ]],
+Cell[91709, 2403, 577, 14, 70, "Input",ExpressionUUID->"da1ca453-4006-413a-b2c6-003351e38c6b"],
+Cell[CellGroupData[{
+Cell[92311, 2421, 2147, 60, 212, "Input",ExpressionUUID->"530693a9-3cce-40fa-92cb-8f65186e023d"],
+Cell[94461, 2483, 27247, 697, 329, "Output",ExpressionUUID->"6ee2e5bf-74a4-4b30-915b-f1e7635b81b4"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[121745, 3185, 2830, 81, 251, "Input",ExpressionUUID->"e0cdcc27-f721-487f-acb9-e3b7ffa02b59"],
+Cell[124578, 3268, 27620, 682, 340, "Output",ExpressionUUID->"7caccb86-22b2-419a-b249-fefc796c93ee"]
+}, Open  ]]
+}
+]
+*)
+
